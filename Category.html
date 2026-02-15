@@ -1,0 +1,163 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Category - Zettapapers</title>
+  <link rel="icon" type="image/png" href="fcn.png">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    .device-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: var(--spacing-lg);
+      padding: var(--spacing-xl) var(--spacing-sm);
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .device-card {
+      background: #111;
+      border: 2px solid #333;
+      border-radius: 16px;
+      padding: var(--spacing-lg);
+      text-decoration: none;
+      color: var(--text-light);
+      transition: all 0.3s ease;
+      display: block;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .device-card:hover {
+      background: #222;
+      border-color: var(--accent);
+      transform: translateY(-5px);
+      box-shadow: 0 0 10px rgba(255, 223, 0, 0.6),
+                  0 0 20px rgba(255, 223, 0, 0.4),
+                  0 0 40px rgba(255, 215, 0, 0.3);
+    }
+
+    .device-card h2 {
+      color: var(--accent);
+      font-family: 'Orbitron', sans-serif;
+      font-size: clamp(1.2rem, 3vw, 1.5rem);
+      margin: 0 0 var(--spacing-xs) 0;
+      text-align: center;
+    }
+
+    .device-card p {
+      color: var(--text-muted);
+      text-align: center;
+      margin: 0 0 var(--spacing-md) 0;
+      font-size: 14px;
+    }
+
+    .preview-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+      margin-top: var(--spacing-md);
+    }
+
+    .preview-grid img {
+      width: 100%;
+      aspect-ratio: 16/9;
+      object-fit: cover;
+      border-radius: 8px;
+      opacity: 0.8;
+      transition: all 0.3s ease;
+    }
+
+    .device-card:hover .preview-grid img {
+      opacity: 1;
+      transform: scale(1.05);
+    }
+
+    @media screen and (max-width: 768px) {
+      .device-grid {
+        grid-template-columns: 1fr;
+        padding: var(--spacing-md);
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Mobile Menu Overlay -->
+  <div class="menu-overlay" id="menuOverlay"></div>
+  
+  <!-- ===== Header ===== -->
+  <div class="header">
+    <a href="index.html" class="logo">Zettapapers <span class="logo-ribbon">1.0</span></a>
+    
+    <!-- Hamburger Menu Button -->
+    <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    
+    <div class="header-right" id="navMenu">
+      <a href="index.html">Home</a>
+<a href="infinity.html">Gallery</a>
+      <a class="active" href="Category.html">Category</a>
+      <a href="about.html">About</a>
+    </div>
+  </div>
+
+  <!-- ===== Hero ===== -->
+  <section class="gallery-hero">
+    <h1>Choose Your Device</h1>
+    <p>Select category to browse optimized wallpapers</p>
+  </section>
+
+  <!-- ===== Device Selection ===== -->
+  <div class="device-grid">
+    
+    <!-- PC/Desktop -->
+    <a href="Category/pc.html" class="device-card">
+      <h2>🖥️ PC & Desktop</h2>
+      <p>High-resolution wallpapers for monitors and laptops</p>
+      <div class="preview-grid">
+        <img src="pcnsw/IMG_20250726_160442.jpg" alt="PC Wallpaper 1" loading="lazy">
+        <img src="pcnsw/IMG_20241103_184415.jpg" alt="PC Wallpaper 2" loading="lazy">
+        <img src="pcnsw/IMG_20250503_185226.jpg" alt="PC Wallpaper 3" loading="lazy">
+      </div>
+    </a>
+
+    <!-- Tablets -->
+    <a href="Category/tables.html" class="device-card">
+      <h2>📱 Tablets & iPad</h2>
+      <p>Optimized for tablet screens and iPad devices</p>
+      <div class="preview-grid">
+        <img src="tabletnsw/IMG_20241103_173756.jpg" alt="Tablet Wallpaper 1" loading="lazy">
+        <img src="tabletnsw/IMG_20241010_162121.jpg" alt="Tablet Wallpaper 2" loading="lazy">
+        <img src="tabletnsw/IMG_20250906_213433.jpg" alt="Tablet Wallpaper 3" loading="lazy">
+      </div>
+    </a>
+
+    <!-- Mobile -->
+    <a href="Category/phone.html" class="device-card">
+      <h2>📲 Mobile Phones</h2>
+      <p>Vertical wallpapers designed for smartphone screens</p>
+      <div class="preview-grid">
+        <img src="phonensw/IMG_20241103_173555.jpg" alt="Phone Wallpaper 1" loading="lazy">
+        <img src="phonensw/IMG_20250517_135448.jpg" alt="Phone Wallpaper 2" loading="lazy">
+        <img src="phonensw/IMG_20251022_181805.jpg" alt="Phone Wallpaper 3" loading="lazy">
+      </div>
+    </a>
+
+  </div>
+
+  <!-- ===== Footer ===== -->
+  <footer>
+    <p>&copy; 2025 Zettapapers Wallpapers | All Rights Reserved | Designed by Daksh Jawale & helped by Dwij Ilme </p>
+  </footer>
+
+  <script src="main.js" defer></script>
+</body>
+</html>
+

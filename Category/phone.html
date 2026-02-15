@@ -1,0 +1,1602 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <base href="../">
+  <title>Phone Wallpapers - Zettapapers</title>
+  <link rel="icon" type="image/png" href="fcn.png">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+
+  <style>
+    .all-gallery-container {
+      padding: 80px 20px 40px;
+      max-width: 100%;
+      margin: 0 auto;
+      min-height: 100vh;
+    }
+
+    .mega-grid {
+      column-count: 4;
+      column-gap: 0;
+      line-height: 0;
+      font-size: 0;
+    }
+
+    @media screen and (max-width: 1200px) {
+      .mega-grid { column-count: 3; }
+    }
+
+    @media screen and (max-width: 768px) {
+      .all-gallery-container { padding: 70px 0 20px; }
+      .mega-grid { column-count: 2; }
+    }
+
+    @media screen and (min-width: 1600px) {
+      .mega-grid { column-count: 5; }
+    }
+
+    .mega-grid img {
+      width: 100%;
+      height: auto;
+      display: block;
+      margin: 0;
+      padding: 0;
+      border: none;
+      border-radius: 0;
+      cursor: pointer;
+      transition: transform 0.3s ease, filter 0.3s ease;
+      break-inside: avoid;
+      margin-bottom: 0;
+    }
+
+    .mega-grid img:hover {
+      transform: scale(1.02);
+      z-index: 100;
+      position: relative;
+      box-shadow: 0 0 30px rgba(255, 204, 0, 0.6);
+    }
+
+    .filter-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      justify-content: center;
+      margin: 20px 0 30px;
+      padding: 0 20px;
+    }
+
+    .chip {
+      background: #1e1e1e;
+      border: 1px solid #333;
+      color: var(--text-light);
+      padding: 8px 16px;
+      border-radius: 20px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-size: 13px;
+      font-family: inherit;
+    }
+
+    .chip:hover, .chip.active {
+      background: var(--accent);
+      color: #000;
+      border-color: var(--accent);
+      font-weight: 600;
+    }
+
+    .shuffle-btn {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 25px;
+      cursor: pointer;
+      font-family: 'Orbitron', sans-serif;
+      font-size: 12px;
+      margin-left: 10px;
+      transition: transform 0.2s;
+    }
+
+    .shuffle-btn:hover {
+      transform: scale(1.05);
+    }
+
+    .modal {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.95);
+      z-index: 10000;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+      backdrop-filter: blur(10px);
+    }
+
+    .modal.active {
+      display: flex;
+    }
+
+    .modal-content {
+      background: var(--bg-darker);
+      max-width: 90vw;
+      max-height: 90vh;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.8);
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+
+    .modal-image-container {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #000;
+      overflow: hidden;
+      min-height: 0;
+    }
+
+    .modal img {
+      max-width: 100%;
+      max-height: 70vh;
+      width: auto;
+      height: auto;
+      object-fit: contain;
+      display: block;
+    }
+
+    .modal-info {
+      padding: 25px;
+      background: var(--bg-darker);
+      border-top: 1px solid #333;
+    }
+
+    .modal-info h2 {
+      margin: 0 0 10px 0;
+      color: var(--accent);
+      font-family: 'Orbitron', sans-serif;
+      font-size: 1.4rem;
+    }
+
+    .modal-info p {
+      color: var(--text-muted);
+      margin: 0 0 20px 0;
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    .modal-actions {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .quality-wrap {
+      position: relative;
+      display: inline-block;
+    }
+
+    .quality-options {
+      position: absolute;
+      bottom: calc(100% + 8px);
+      left: 0;
+      display: none;
+      background: #151515;
+      border: 1px solid #333;
+      border-radius: 10px;
+      padding: 6px;
+      min-width: 130px;
+      z-index: 20;
+      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.45);
+    }
+
+    .quality-options.show {
+      display: grid;
+      gap: 6px;
+    }
+
+    .quality-btn {
+      background: #222;
+      color: var(--text-light);
+      border: 1px solid #444;
+      padding: 10px 12px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 13px;
+      text-align: left;
+    }
+
+    .quality-btn:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    .btn-download {
+      background: var(--accent);
+      color: #000;
+      border: none;
+      padding: 12px 30px;
+      border-radius: 8px;
+      font-weight: bold;
+      cursor: pointer;
+      font-family: inherit;
+      font-size: 16px;
+      transition: all 0.3s;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .btn-download:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 20px rgba(255, 204, 0, 0.5);
+    }
+
+    .btn-close {
+      background: transparent;
+      border: 1px solid #555;
+      color: var(--text-light);
+      padding: 12px 20px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-family: inherit;
+      transition: all 0.3s;
+    }
+
+    .btn-close:hover {
+      background: #333;
+      border-color: #777;
+    }
+
+    .close-x {
+      position: absolute;
+      top: 15px;
+      right: 20px;
+      color: white;
+      font-size: 35px;
+      cursor: pointer;
+      z-index: 10001;
+      width: 45px;
+      height: 45px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(0,0,0,0.5);
+      border-radius: 50%;
+      transition: all 0.3s;
+      border: none;
+      font-family: Arial, sans-serif;
+    }
+
+    .close-x:hover {
+      background: var(--accent);
+      color: #000;
+      transform: rotate(90deg);
+    }
+
+    .no-results {
+      display: none;
+      text-align: center;
+      padding: 40px;
+      color: var(--text-muted);
+      font-size: 16px;
+    }
+
+    .no-results.show {
+      display: block;
+    }
+
+    @media screen and (max-width: 600px) {
+      .modal-content {
+        max-width: 95vw;
+        max-height: 95vh;
+      }
+      .modal img {
+        max-height: 60vh;
+      }
+      .modal-info {
+        padding: 15px;
+      }
+      .modal-info h2 {
+        font-size: 1.1rem;
+      }
+      .filter-chips {
+        padding: 0 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="menu-overlay" id="menuOverlay"></div>
+
+  <div class="header">
+    <a href="index.html" class="logo">Zettapapers <span class="logo-ribbon">1.0</span></a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="header-right" id="navMenu">
+      <a href="index.html">Home</a>
+<a href="infinity.html">Gallery</a>
+
+      <a class="active" href="Category.html">Category</a>
+      <a href="about.html">About</a>
+    </div>
+  </div>
+
+  <div class="all-gallery-container">
+    <section class="gallery-hero" style="padding: 20px 0;">
+      <h1>Phone Wallpapers</h1>
+      <p>Beautiful vertical wallpapers for your mobile device. Click to download.</p>
+      <div style="margin-top: 15px;">
+        <button class="shuffle-btn" onclick="shuffleGallery()">🔀Shuffle Order</button>
+      </div>
+    </section>
+
+    <div class="filter-search-box" style="margin-bottom: 20px;">
+      <select id="categoryFilter">
+        <option value="all">All Wallpapers</option>
+        <option value="flower">Flowers</option>
+        <option value="nature">Nature & Landscapes</option>
+        <option value="wildlife">Wildlife</option>
+        <option value="statue of unity">Statue of Unity</option>
+      </select>
+      <input type="text" id="searchInput" placeholder="Search phone wallpapers...">
+    </div>
+
+    <div class="filter-chips">
+      <button class="chip active" onclick="quickFilter(event, 'all')">All</button>
+      <button class="chip" onclick="quickFilter(event, 'flower')">Flowers</button>
+      <button class="chip" onclick="quickFilter(event, 'nature')">Nature</button>
+      <button class="chip" onclick="quickFilter(event, 'wildlife')">Wildlife</button>
+      <button class="chip" onclick="quickFilter(event, 'statue of unity')">Statue of Unity</button>
+    </div>
+
+    <p class="no-results" id="noResults">No wallpapers found. Try different filters.</p>
+
+    <div class="mega-grid" id="mainGallery">
+      <img src="phonensw/Image 2025-08-16 at 19.09.17_4fc5133e.jpg"
+alt="Orange wildflowers"
+data-category="Flower"
+data-title="Field Marigolds"
+data-desc="Vibrant orange wildflowers blooming in green foliage."
+loading="lazy">
+
+<img src="phonensw/Image 2025-08-16 at 19.09.18_11f802cd.jpg"
+alt="Pink flower"
+data-category="Flower"
+data-title="Pink Wood Sorrel"
+data-desc="Delicate pink oxalis flower with three petals."
+loading="lazy">
+
+<img src="phonensw/Image 2025-08-16 at 19.09.30_53bc0515.jpg"
+alt="Rural road"
+data-category="Nature"
+data-title="Misty Country Path"
+data-desc="Narrow road stretching into misty distance through countryside."
+loading="lazy">
+
+<img src="phonensw/IMG_20241017_175138.jpg"
+alt="Blue flower"
+data-category="Flower"
+data-title="Butterfly Pea Bloom"
+data-desc="Vivid blue butterfly pea flower resting on concrete surface."
+loading="lazy">
+
+<img src="phonensw/IMG_20241017_175251.jpg"
+alt="Yellow wildflowers"
+data-category="Flower"
+data-title="Yellow Field Flowers"
+data-desc="Cluster of small yellow wildflowers with slender stems."
+loading="lazy">
+
+<img src="phonensw/IMG_20241017_175328.jpg"
+alt="Purple flowers"
+data-category="Flower"
+data-title="Purple Glory Bower"
+data-desc="Tiny purple clerodendrum flowers among green leaves."
+loading="lazy">
+
+<img src="phonensw/IMG_20241017_175339.jpg"
+alt="Yellow cosmos"
+data-category="Flower"
+data-title="Yellow Cosmos"
+data-desc="Bright yellow cosmos flower with delicate petals and dark center."
+loading="lazy">
+
+<img src="phonensw/IMG_20241017_175518.jpg"
+alt="Blue morning glory"
+data-category="Flower"
+data-title="Morning Glory Bloom"
+data-desc="Deep blue morning glory flower against grassy background."
+loading="lazy">
+
+<img src="phonensw/IMG_20241017_175906.jpg"
+alt="Lake and reeds"
+data-category="Nature"
+data-title="Serene Lakeside"
+data-desc="Calm lake view with tall green reeds and distant trees."
+loading="lazy">
+
+<img src="phonensw/IMG_20241017_180243.jpg"
+alt="Lantana flowers"
+data-category="Flower"
+data-title="Pink Lantana Cluster"
+data-desc="Colorful lantana blooms in shades of pink and yellow."
+loading="lazy">
+
+<img src="phonensw/IMG_20241017_180341.jpg"
+alt="White jasmine"
+data-category="Flower"
+data-title="Wild Jasmine"
+data-desc="Pure white jasmine flowers with star-shaped petals."
+loading="lazy">
+
+<img src="phonensw/IMG_20241017_180549.jpg"
+alt="Dried seed pods"
+data-category="Nature"
+data-title="Dried Botanicals"
+data-desc="Dried seed pods and brown foliage in late season."
+loading="lazy">
+
+<img src="phonensw/IMG_20241017_180855.jpg"
+alt="Lichen branches"
+data-category="Nature"
+data-title="White Lichen"
+data-desc="Tree branches covered with white lichen and moss."
+loading="lazy">
+
+<img src="phonensw/IMG_20241101_141942.jpg"
+alt="Yellow cassia"
+data-category="Flower"
+data-title="Cassia Blossoms"
+data-desc="Bright yellow cassia flowers on green shrub branches."
+loading="lazy">
+
+<img src="phonensw/IMG_20241103_120444.jpg"
+alt="Red salvia"
+data-category="Flower"
+data-title="Red Salvia Spikes"
+data-desc="Vibrant red salvia flowers in dense vertical clusters."
+loading="lazy">
+
+<img src="phonensw/IMG_20241103_121238.jpg"
+alt="Pink water lily"
+data-category="Flower"
+data-title="Pink Lotus Bloom"
+data-desc="Delicate pink water lily floating on dark water."
+loading="lazy">
+
+<img src="phonensw/IMG_20241103_122817.jpg"
+alt="Purple flowers"
+data-category="Flower"
+data-title="Jacaranda Blossoms"
+data-desc="Tiny purple jacaranda flowers in dense clusters."
+loading="lazy">
+
+<img src="phonensw/IMG_20241103_155808.jpg"
+alt="Orange flower"
+data-category="Flower"
+data-title="Orange Wild Bloom"
+data-desc="Single orange flower standing in grass field."
+loading="lazy">
+
+<img src="phonensw/IMG_20241103_155824_1.jpg"
+alt="Garden path"
+data-category="Nature"
+data-title="Grassy Walkway"
+data-desc="Narrow path cutting through lush green grass."
+loading="lazy">
+
+<img src="phonensw/IMG_20241103_173555.jpg"
+alt="Orange marigold"
+data-category="Flower"
+data-title="Field Marigold"
+data-desc="Vibrant orange marigold with layered petals."
+loading="lazy">
+
+<img src="phonensw/IMG_20241103_174645.jpg"
+alt="Pink four o'clock flower"
+data-category="Flower"
+data-title="Pink Mirabilis"
+data-desc="Pale pink four o'clock flower with trumpet shape."
+loading="lazy">
+
+<img src="phonensw/IMG_20241103_174647.jpg"
+alt="Magenta bloom"
+data-category="Flower"
+data-title="Magenta Beauty"
+data-desc="Deep magenta flower with pale center highlights."
+loading="lazy">
+
+<img src="phonensw/IMG_20241103_174847.jpg"
+alt="Bird of paradise"
+data-category="Flower"
+data-title="Heliconia Red"
+data-desc="Tropical heliconia with bright red and yellow bracts."
+loading="lazy">
+
+<img src="phonensw/IMG_20241103_174906.jpg"
+alt="Tropical flower"
+data-category="Flower"
+data-title="Bird of Paradise"
+data-desc="Exotic bird of paradise flower in garden setting."
+loading="lazy">
+
+<img src="phonensw/IMG_20241103_174913.jpg"
+alt="Red heliconia"
+data-category="Flower"
+data-title="Scarlet Heliconia"
+data-desc="Vivid scarlet heliconia flower against green foliage."
+loading="lazy">
+
+<img src="phonensw/IMG_20241103_174914.jpg"
+alt="Tropical bloom"
+data-category="Flower"
+data-title="Heliconia Cluster"
+data-desc="Cluster of hanging heliconia flowers in tropical garden."
+loading="lazy">
+
+<img src="phonensw/IMG_20241104_065925.jpg"
+alt="Pink hibiscus"
+data-category="Flower"
+data-title="Pink Hibiscus"
+data-desc="Delicate pink hibiscus with darker center throat."
+loading="lazy">
+
+<img src="phonensw/IMG_20241104_065941.jpg"
+alt="Hibiscus flower"
+data-category="Flower"
+data-title="Coral Hibiscus"
+data-desc="Coral pink hibiscus bloom with five soft petals."
+loading="lazy">
+
+<img src="phonensw/IMG_20241104_070514.jpg"
+alt="Orange cosmos"
+data-category="Flower"
+data-title="Cosmos Sulphureus"
+data-desc="Bright orange cosmos flower with yellow center."
+loading="lazy">
+
+<img src="phonensw/IMG_20241104_070810.jpg"
+alt="White flower"
+data-category="Flower"
+data-title="White Wildflower"
+data-desc="Elegant white flower with multiple petals and green leaves."
+loading="lazy">
+
+<img src="phonensw/IMG_20241104_071037.jpg"
+alt="Orange marigold"
+data-category="Flower"
+data-title="Golden Marigold"
+data-desc="Bright orange marigold flower glowing in morning light."
+loading="lazy">
+
+<img src="phonensw/IMG_20241104_072151.jpg"
+alt="Red torch ginger"
+data-category="Flower"
+data-title="Red Torch Ginger"
+data-desc="Vibrant red torch ginger bloom with waxy bracts."
+loading="lazy">
+
+<img src="phonensw/IMG_20241104_072222.jpg"
+alt="Pink wildflower"
+data-category="Flower"
+data-title="Pink Meadow Bloom"
+data-desc="Delicate pink wildflower among lush green leaves."
+loading="lazy">
+
+<img src="phonensw/IMG_20241104_072300.jpg"
+alt="Purple morning glory"
+data-category="Flower"
+data-title="Purple Morning Glory"
+data-desc="Trumpet-shaped purple morning glory vine flower."
+loading="lazy">
+
+<img src="phonensw/IMG_20241104_081057.jpg"
+alt="Small tree"
+data-category="Nature"
+data-title="Young Sapling"
+data-desc="Small potted tree with slender trunk and fresh leaves."
+loading="lazy">
+
+<img src="phonensw/IMG_20241104_081404.jpg"
+alt="Bottle gourd plant"
+data-category="Nature"
+data-title="Bottle Gourd Vine"
+data-desc="Fuzzy young bottle gourd fruit hanging from climbing vine."
+loading="lazy">
+
+<img src="phonensw/IMG_20241104_081630.jpg"
+alt="Pink poinsettia"
+data-category="Flower"
+data-title="Pink Poinsettia"
+data-desc="Vibrant pink poinsettia bracts creating colorful display."
+loading="lazy">
+
+<img src="phonensw/IMG_20241104_081724.jpg"
+alt="Pink leaves"
+data-category="Flower"
+data-title="Crimson Poinsettia"
+data-desc="Rich crimson and pink poinsettia foliage in garden."
+loading="lazy">
+
+<img src="phonensw/IMG_20241104_081849.jpg"
+alt="Pitcher plant"
+data-category="Nature"
+data-title="Nepenthes Pitcher"
+data-desc="Carnivorous pitcher plant with hanging trap vessel."
+loading="lazy">
+
+<img src="phonensw/IMG_20241104_082026.jpg"
+alt="White wildflowers"
+data-category="Flower"
+data-title="White Star Flowers"
+data-desc="Tiny white star-shaped flowers clustered on stems."
+loading="lazy">
+
+<img src="phonensw/IMG_20241104_082033.jpg"
+alt="Berry plant"
+data-category="Nature"
+data-title="Wild Berry Bush"
+data-desc="Shrub bearing small red and green wild berries."
+loading="lazy">
+
+<img src="phonensw/IMG_20241104_083140.jpg"
+alt="Blue hydrangea"
+data-category="Flower"
+data-title="Blue Hydrangea"
+data-desc="Cluster of delicate blue hydrangea blossoms."
+loading="lazy">
+
+<img src="phonensw/IMG_20241104_083147.jpg"
+alt="Spider plant"
+data-category="Nature"
+title="Spider Plant"
+data-desc="Spiky spider plant with variegated long leaves."
+loading="lazy">
+
+<img src="phonensw/IMG_20241104_083222.jpg"
+alt="Red stem plant"
+data-category="Nature"
+data-title="Dragon Plant"
+data-desc="Tropical plant with striking red stems and green leaves."
+loading="lazy">
+
+<img src="phonensw/IMG_20241104_083248.jpg"
+alt="White flowers"
+data-category="Flower"
+data-title="White Jasmine"
+data-desc="Elegant white jasmine flowers against dark green foliage."
+loading="lazy">
+
+<img src="phonensw/IMG_20241104_083248_1.jpg"
+alt="White blossoms"
+data-category="Flower"
+data-title="Wild Whiteflowers"
+data-desc="Cluster of tiny white flowers with yellow centers."
+loading="lazy">
+
+<img src="phonensw/IMG_20241104_083250.jpg"
+alt="White blooms"
+data-category="Flower"
+data-title="Milky White Flowers"
+data-desc="Pure white flowers blooming in dense clusters."
+loading="lazy">
+
+<img src="phonensw/IMG_20241104_083330.jpg"
+alt="Yellow passion flower"
+data-category="Flower"
+data-title="Yellow Passion Flower"
+data-desc="Round yellow passion fruit flower with intricate structure."
+loading="lazy">
+
+<img src="phonensw/IMG_20241104_083342.jpg"
+alt="Green leaves"
+data-category="Nature"
+data-title="Lush Green Foliage"
+data-desc="Dense tropical foliage with various shades of green."
+loading="lazy">
+
+<img src="phonensw/IMG_20241104_083614.jpg"
+alt="Red hibiscus"
+data-category="Flower"
+data-title="Scarlet Hibiscus"
+data-desc="Deep scarlet hibiscus flower with prominent stamen."
+loading="lazy">
+
+<img src="phonensw/IMG_20241104_084429.jpg"
+alt="Purple flower cluster"
+data-category="Flower"
+data-title="Purple Spikes"
+data-desc="Elongated purple flower spikes on tall stalks."
+loading="lazy">
+
+<img src="phonensw/IMG_20241104_084457.jpg"
+alt="Yellow wildflowers"
+data-category="Flower"
+data-title="Buttercup Yellows"
+data-desc="Cheerful yellow wildflowers swaying in breeze."
+loading="lazy">
+
+<img src="phonensw/IMG_20241104_084503.jpg"
+alt="Yellow field flowers"
+data-category="Flower"
+data-title="Field Daisies"
+data-desc="Small yellow daisy-like flowers in grassy meadow."
+loading="lazy">
+
+<img src="phonensw/IMG_20241104_084539.jpg"
+alt="Dried grass"
+data-category="Nature"
+data-title="Autumn Grass"
+data-desc="Golden dried grass seed heads in late afternoon."
+loading="lazy">
+
+<img src="phonensw/IMG_20241104_084544.jpg"
+alt="Feather grass"
+data-category="Nature"
+data-title="Feather Reed Grass"
+data-desc="Soft feathery grass plumes catching sunlight."
+loading="lazy">
+
+<img src="phonensw/IMG_20241104_084657.jpg"
+alt="Pink mimosa"
+data-category="Flower"
+data-title="Pink Mimosa"
+data-desc="Delicate pink mimosa flowers with compound leaves."
+loading="lazy">
+
+<img src="phonensw/IMG_20241104_084700.jpg"
+alt="Pink powder puff"
+data-category="Flower"
+data-title="Pink Powder Puff"
+data-desc="Fluffy pink powder puff flowers on slender branches."
+loading="lazy">
+
+<img src="phonensw/IMG_20241104_084956.jpg"
+alt="Purple wildflower"
+data-category="Flower"
+data-title="Purple Clover"
+data-desc="Purple clover-like flowers blooming in dry soil."
+loading="lazy">
+
+<img src="phonensw/IMG_20241104_085012.jpg"
+alt="Pink vigna flower"
+data-category="Flower"
+data-title="Pink Wild Pea"
+data-desc="Small pink vigna flowers with butterfly-shaped petals."
+loading="lazy">
+
+<img src="phonensw/IMG_20241104_085606.jpg"
+alt="Purple shamrock"
+data-category="Flower"
+data-title="Purple Shamrock"
+data-desc="Purple oxalis flowers among heart-shaped leaves."
+loading="lazy"><img src="phonensw/IMG_20241104_085608.jpg"
+alt="Purple clover"
+data-category="Flower"
+data-title="Purple Clover Patch"
+data-desc="Dense patch of purple clover flowers in green foliage."
+loading="lazy">
+
+<img src="phonensw/IMG_20241104_090503.jpg"
+alt="Dry grass flowers"
+data-category="Nature"
+data-title="Meadow Grass"
+data-desc="Wild grass with tiny pink flowers in dry meadow."
+loading="lazy">
+
+<img src="phonensw/IMG_20241104_090504.jpg"
+alt="Field grass"
+data-category="Nature"
+data-title="Autumn Grasses"
+data-desc="Tall dried grass with scattered wildflowers."
+loading="lazy">
+
+<img src="phonensw/IMG_20241104_090835.jpg"
+alt="Red berries"
+data-category="Flower"
+data-title="Wild Red Berries"
+data-desc="Cluster of bright red berries on leafy branches."
+loading="lazy">
+
+<img src="phonensw/IMG_20241104_092250.jpg"
+alt="Purple morning glory"
+data-category="Flower"
+data-title="Violet Trumpet Vine"
+data-desc="Purple morning glory trumpet vine in full bloom."
+loading="lazy">
+
+<img src="phonensw/IMG_20241104_110255_1.jpg"
+alt="Orange flower"
+data-category="Flower"
+data-title="Orange Cosmos"
+data-desc="Vibrant orange cosmos flower in wild grass."
+loading="lazy">
+
+<img src="phonensw/IMG_20241104_133359.jpg"
+alt="Pink hibiscus"
+data-category="Flower"
+data-title="Pink Hibiscus Bloom"
+data-desc="Soft pink hibiscus with dark red center throat."
+loading="lazy">
+
+<img src="phonensw/IMG_20241104_133558.jpg"
+alt="Mixed flowers"
+data-category="Flower"
+data-title="Colorful Flower Bed"
+data-desc="Mixed border of pink, red and white flowers."
+loading="lazy">
+
+<img src="phonensw/IMG_20241104_154749.jpg"
+alt="Purple periwinkle"
+data-category="Flower"
+data-title="Vinca Purple"
+data-desc="Deep purple periwinkle flowers with glossy leaves."
+loading="lazy">
+
+<img src="phonensw/IMG_20241226_170843.jpg"
+alt="Pink flower"
+data-category="Flower"
+data-title="Pink Wild Rose"
+data-desc="Delicate pink five-petaled wild rose bloom."
+loading="lazy">
+
+<img src="phonensw/IMG_20241229_090133.jpg"
+alt="Purple bindweed"
+data-category="Flower"
+data-title="Morning Glory Purple"
+data-desc="Rich purple morning glory climbing on structure."
+loading="lazy">
+
+<img src="phonensw/IMG_20250228_140245.jpg"
+alt="Red bougainvillea"
+data-category="Flower"
+data-title="Scarlet Bougainvillea"
+data-desc="Vivid red bougainvillea bracts against blue sky."
+loading="lazy">
+
+<img src="phonensw/IMG_20250228_140319.jpg"
+alt="Magenta bougainvillea"
+data-category="Flower"
+data-title="Magenta Bougainvillea"
+data-desc="Bright magenta bougainvillea cascading over wall."
+loading="lazy">
+
+<img src="phonensw/IMG_20250228_155443.jpg"
+alt="Pink bougainvillea"
+data-category="Flower"
+data-title="Pink Bougainvillea"
+data-desc="Soft pink bougainvillea flowers in dense clusters."
+loading="lazy">
+
+<img src="phonensw/IMG_20250228_155449.jpg"
+alt="Pink bougainvillea bush"
+data-category="Flower"
+data-title="Coral Bougainvillea"
+data-desc="Coral pink bougainvillea bush in full bloom."
+loading="lazy">
+
+<img src="phonensw/IMG_20250228_173329.jpg"
+alt="White spider lily"
+data-category="Flower"
+data-title="White Spider Lily"
+data-desc="Elegant white spider lily with long delicate petals."
+loading="lazy">
+
+<img src="phonensw/IMG_20250228_173330.jpg"
+alt="Spider lily pair"
+data-category="Flower"
+data-title="Twin Spider Lilies"
+data-desc="Two white spider lilies blooming together."
+loading="lazy">
+
+<img src="phonensw/IMG_20250228_174734.jpg"
+alt="Pink bougainvillea"
+data-category="Flower"
+data-title="Pink Paper Flower"
+data-desc="Bright pink bougainvillea with papery bracts."
+loading="lazy">
+
+<img src="phonensw/IMG_20250228_174740.jpg"
+alt="Pink dahlia"
+data-category="Flower"
+data-title="Pink Dahlia"
+data-desc="Full pink dahlia bloom with layered petals."
+loading="lazy">
+
+<img src="phonensw/IMG_20250228_174745.jpg"
+alt="Pink pompon dahlia"
+data-category="Flower"
+data-title="Pompon Dahlia"
+data-desc="Round pink pompon dahlia with perfect symmetry."
+loading="lazy">
+
+<img src="phonensw/IMG_20250517_094754.jpg"
+alt="Yellow flower"
+data-category="Flower"
+data-title="Yellow Pea Flower"
+data-desc="Small yellow flower held between fingers."
+loading="lazy">
+
+<img src="phonensw/IMG_20250517_122424.jpg"
+alt="Rocky landscape"
+data-category="Nature"
+data-title="Rocky Stream"
+data-desc="Rocky landscape with water and lush greenery."
+loading="lazy">
+
+<img src="phonensw/IMG_20250517_122745.jpg"
+alt="Green valley"
+data-category="Nature"
+data-title="Verdant Valley"
+data-desc="Lush green valley with dense vegetation."
+loading="lazy">
+
+<img src="phonensw/IMG_20250517_122809.jpg"
+alt="Forest edge"
+data-category="Nature"
+data-title="Forest Clearing"
+data-desc="Grassy clearing at the edge of dense forest."
+loading="lazy">
+
+<img src="phonensw/IMG_20250517_125241.jpg"
+alt="Garden landscape"
+data-category="Nature"
+data-title="Botanical Garden"
+data-desc="Tropical garden landscape with open grass area."
+loading="lazy">
+
+<img src="phonensw/IMG_20250517_125755.jpg"
+alt="Deep forest"
+data-category="Nature"
+data-title="Dense Jungle"
+data-desc="Thick forest with tall trees and vines."
+loading="lazy">
+
+<img src="phonensw/IMG_20250517_125758.jpg"
+alt="Forest path"
+data-category="Nature"
+data-title="Jungle Trail"
+data-desc="Narrow trail winding through dense green forest."
+loading="lazy">
+
+<img src="phonensw/IMG_20250517_125826.jpg"
+alt="Peacock"
+data-category="Wildlife"
+data-title="Indian Peafowl"
+data-desc="Male peacock with vibrant blue neck and crown."
+loading="lazy">
+
+<img src="phonensw/IMG_20250517_130055.jpg"
+alt="Forest trees"
+data-category="Nature"
+data-title="Canopy View"
+data-desc="Towering forest trees forming dense canopy."
+loading="lazy">
+
+<img src="phonensw/IMG_20250517_132245.jpg"
+alt="Woodland"
+data-category="Nature"
+data-title="Woodland Scene"
+data-desc="Sun-dappled woodland with ferns and trees."
+loading="lazy">
+
+<img src="phonensw/IMG_20250517_133701.jpg"
+alt="Blue and yellow macaw"
+data-category="Wildlife"
+data-title="Blue-and-Yellow Macaw"
+data-desc="Vibrant blue and yellow macaw perched on wooden beam."
+loading="lazy">
+
+<img src="phonensw/IMG_20250517_133726_1.jpg"
+alt="Blue macaw"
+data-category="Wildlife"
+data-title="Hyacinth Macaw"
+data-desc="Brilliant blue macaw with yellow eye patches on rail."
+loading="lazy">
+
+<img src="phonensw/IMG_20250517_133740.jpg"
+alt="Scarlet macaw"
+data-category="Wildlife"
+data-title="Scarlet Macaw"
+data-desc="Bright red, yellow and blue macaw on wooden perch."
+loading="lazy">
+
+<img src="phonensw/IMG_20250517_133743.jpg"
+alt="Blue macaw in hut"
+data-category="Wildlife"
+data-title="Macaw in Shelter"
+data-desc="Blue macaw resting inside bamboo structure."
+loading="lazy">
+
+<img src="phonensw/IMG_20250517_133821.jpg"
+alt="Blue macaw close-up"
+data-category="Wildlife"
+data-title="Azure Macaw"
+data-desc="Close-up of blue macaw showing vibrant plumage details."
+loading="lazy">
+
+<img src="phonensw/IMG_20250517_134021.jpg"
+alt="Parrot on branch"
+data-category="Wildlife"
+data-title="Green Parrot"
+data-desc="Green parrot with red tail feathers on branch."
+loading="lazy">
+
+<img src="phonensw/IMG_20250517_134034.jpg"
+alt="Great green macaw"
+data-category="Wildlife"
+data-title="Great Green Macaw"
+data-desc="Large green macaw with red forehead in enclosure."
+loading="lazy">
+
+<img src="phonensw/IMG_20250517_134041.jpg"
+alt="Pink cockatoo"
+data-category="Wildlife"
+data-title="Rose-Breasted Cockatoo"
+data-desc="Pink and grey galah cockatoo perched on branch."
+loading="lazy">
+
+<img src="phonensw/IMG_20250517_134050.jpg"
+alt="Pink parrot pair"
+data-category="Wildlife"
+data-title="Galah Pair"
+data-desc="Two pink cockatoos sitting together on wooden perch."
+loading="lazy">
+
+<img src="phonensw/IMG_20250517_134541.jpg"
+alt="Red hibiscus"
+data-category="Flower"
+data-title="Scarlet Hibiscus"
+data-desc="Vivid red hibiscus flower in tropical garden."
+loading="lazy">
+
+<img src="phonensw/IMG_20250517_135446.jpg"
+alt="Pink hibiscus"
+data-category="Flower"
+data-title="Pink China Rose"
+data-desc="Soft pink hibiscus bloom with red center."
+loading="lazy">
+
+<img src="phonensw/IMG_20250517_135448.jpg"
+alt="Red tropical hibiscus"
+data-category="Flower"
+data-title="Red Tropical Hibiscus"
+data-desc="Deep red hibiscus with prominent yellow stamens."
+loading="lazy">
+
+<img src="phonensw/IMG_20250517_135451.jpg"
+alt="Orange hibiscus"
+data-category="Flower"
+data-title="Orange Hibiscus"
+data-desc="Bright orange hibiscus with dark red throat."
+loading="lazy">
+
+<img src="phonensw/IMG_20250517_143427.jpg"
+alt="Statue of Unity distant"
+data-category="Statue of Unity"
+data-title="Statue from Afar"
+data-desc="Statue of Unity viewed from distant garden path."
+loading="lazy">
+
+<img src="phonensw/IMG_20250517_144201.jpg"
+alt="Statue with sunlight"
+data-category="Statue of Unity"
+data-title="Statue Sunburst"
+data-desc="Statue of Unity with sun flaring behind bronze figure."
+loading="lazy">
+
+<img src="phonensw/IMG_20250517_170715.jpg"
+alt="Statue of Unity close"
+data-category="Statue of Unity"
+data-title="Sardar Patel Monument"
+data-desc="Close view of the Statue of Unity bronze sculpture."
+loading="lazy">
+
+<img src="phonensw/IMG_20250517_184038.jpg"
+alt="Statue silhouette"
+data-category="Statue of Unity"
+data-title="Sunset Silhouette"
+data-desc="Dark silhouette of Statue of Unity against evening sky."
+loading="lazy">
+
+<img src="phonensw/IMG_20250517_195434.jpg"
+alt="Statue at night"
+data-category="Statue of Unity"
+data-title="Illuminated Monument"
+data-desc="Statue of Unity glowing golden under night lights."
+loading="lazy">
+
+<img src="phonensw/IMG_20250517_204611.jpg"
+alt="Statue night view"
+data-category="Statue of Unity"
+data-title="Nocturnal View"
+data-desc="Statue of Unity with decorative lighting against dark sky."
+loading="lazy">
+
+<img src="phonensw/IMG_20250518_112814.jpg"
+alt="White morning glory"
+data-category="Flower"
+data-title="White Moonflower"
+data-desc="Pure white morning glory bloom with heart-shaped leaves."
+loading="lazy">
+
+<img src="phonensw/IMG_20250518_112822.jpg"
+alt="White jasmine"
+data-category="Flower"
+data-title="Wild Jasmine"
+data-desc="Cluster of white jasmine flowers with yellow centers."
+loading="lazy">
+
+<img src="phonensw/IMG_20250518_112823.jpg"
+alt="White flowers"
+data-category="Flower"
+data-title="Star Jasmine"
+data-desc="Delicate white star-shaped flowers on vine."
+loading="lazy">
+
+<img src="phonensw/IMG_20250518_112958.jpg"
+alt="Hand holding periwinkle"
+data-category="Flower"
+data-title="Pink Periwinkle"
+data-desc="Hand gently holding pink periwinkle bloom."
+loading="lazy">
+
+<img src="phonensw/IMG_20250518_124254.jpg"
+alt="Statue from hill"
+data-category="Statue of Unity"
+data-title="Hillside View"
+data-desc="Statue of Unity seen from distant hillside viewpoint."
+loading="lazy">
+
+<img src="phonensw/IMG_20250518_125016.jpg"
+alt="Statue across river"
+data-category="Statue of Unity"
+data-title="River View"
+data-desc="Statue of Unity towering across the Narmada river."
+loading="lazy">
+
+<img src="phonensw/IMG_20250518_125226.jpg"
+alt="Statue frontal"
+data-category="Statue of Unity"
+data-title="Monumental View"
+data-desc="Frontal view of Statue of Unity from observation point."
+loading="lazy">
+
+<img src="phonensw/IMG_20250518_125313.jpg"
+alt="Statue reflection"
+data-category="Statue of Unity"
+data-title="Reflecting Pool View"
+data-desc="Statue of Unity mirrored in calm reflecting pool."
+loading="lazy">
+
+<img src="phonensw/IMG_20250518_150904.jpg"
+alt="Purple orchids"
+data-category="Flower"
+data-title="Purple Dendrobium"
+data-desc="Cluster of purple orchids growing on tree bark."
+loading="lazy">
+
+<img src="phonensw/IMG_20250518_151014.jpg"
+alt="Pink orchids"
+data-category="Flower"
+data-title="Pink Orchid Spray"
+data-desc="Elegant spray of pink moth orchids in garden."
+loading="lazy">
+
+<img src="phonensw/IMG_20250518_151107.jpg"
+alt="Red ixora"
+data-category="Flower"
+data-title="Red Ixora Cluster"
+data-desc="Bright red ixora flowers in dense tropical cluster."
+loading="lazy">
+
+<img src="phonensw/IMG_20250518_151128.jpg"
+alt="Yellow flower"
+data-category="Flower"
+data-title="Yellow Portulaca"
+data-desc="Bright yellow moss rose flower with succulent leaves."
+loading="lazy">
+
+<img src="phonensw/IMG_20250522_191620.jpg"
+alt="Golden sunset"
+data-category="Nature"
+data-title="Golden Hour Glow"
+data-desc="Warm golden sunset light illuminating clouds and landscape."
+loading="lazy">
+
+<img src="phonensw/IMG_20250522_191907.jpg"
+alt="Sunset silhouette"
+data-category="Nature"
+data-title="Obelisk Sunset"
+data-desc="Golden sunset behind silhouetted obelisk structure."
+loading="lazy">
+
+<img src="phonensw/IMG_20250522_194350.jpg"
+alt="Blue sky sunset"
+data-category="Nature"
+data-title="Twilight Blue"
+data-desc="Blue sky gradient with warm sunset tones on horizon."
+loading="lazy">
+
+<img src="phonensw/IMG_20250523_095607.jpg"
+alt="Yellow cosmos"
+data-category="Flower"
+data-title="Yellow Cosmos"
+data-desc="Vibrant yellow cosmos flower with finely divided leaves."
+loading="lazy">
+
+<img src="phonensw/IMG_20250523_095613.jpg"
+alt="Orange flower"
+data-category="Flower"
+data-title="Sulphur Cosmos"
+data-desc="Bright orange cosmos bloom in morning light."
+loading="lazy">
+
+<img src="phonensw/IMG_20250523_095752.jpg"
+alt="Purple ruellia"
+data-category="Flower"
+data-title="Purple Ruellia"
+data-desc="Trumpet-shaped purple ruellia flowers on vine."
+loading="lazy">
+
+<img src="phonensw/IMG_20250523_095809_1.jpg"
+alt="Purple flowers vine"
+data-category="Flower"
+data-title="Violet Vine"
+data-desc="Cluster of purple flowers climbing on wooden post."
+loading="lazy">
+
+<img src="phonensw/IMG_20250523_140114.jpg"
+alt="Ancient fort"
+data-category="Nature"
+data-title="Historic Fort Ruins"
+data-desc="Ancient stone fort ruins against blue sky."
+loading="lazy">
+
+<img src="phonensw/IMG_20250524_115212.jpg"
+alt="Mountain village"
+data-category="Nature"
+data-title="Mountain Hamlet"
+data-desc="Rocky mountain landscape with blue roofed structure."
+loading="lazy">
+
+<img src="phonensw/IMG_20250524_120806.jpg"
+alt="Stone steps"
+data-category="Nature"
+data-title="Ancient Stone Steps"
+data-desc="Weathered stone steps carved into hillside."
+loading="lazy">
+
+<img src="phonensw/IMG_20250524_132345_1.jpg"
+alt="Lizard on rock"
+data-category="Wildlife"
+data-title="Rock Lizard"
+data-desc="Small lizard basking on sun-warmed rock surface."
+loading="lazy">
+
+<img src="phonensw/IMG_20250524_140520.jpg"
+alt="Succulent plant"
+data-category="Nature"
+data-title="Desert Rose"
+data-desc="Succulent plant with thick stem and sparse leaves."
+loading="lazy">
+
+<img src="phonensw/IMG_20250524_141100.jpg"
+alt="Hand holding plant"
+data-category="Nature"
+data-title="Examining Flora"
+data-desc="Hand holding small yellow-flowered plant for inspection."
+loading="lazy">
+
+<img src="phonensw/IMG_20250618_224218.jpg"
+alt="Night blooming flower"
+data-category="Flower"
+data-title="Night Blooming Cereus"
+data-desc="White star-shaped cactus flower blooming at night."
+loading="lazy">
+
+<img src="phonensw/IMG_20250706_161123.jpg"
+alt="Baby bird"
+data-category="Wildlife"
+data-title="Nestling Chick"
+data-desc="Small fluffy bird chick in natural nest setting."
+loading="lazy">
+
+<img src="phonensw/IMG_20250706_163455_1.jpg"
+alt="Green leaves"
+data-category="Nature"
+data-title="Lush Foliage"
+data-desc="Vibrant green leaves with water droplets."
+loading="lazy">
+
+<img src="phonensw/IMG_20250706_163718.jpg"
+alt="White wildflower"
+data-category="Flower"
+data-title="Minute White Bloom"
+data-desc="Tiny white wildflower with yellow center."
+loading="lazy">
+
+<img src="phonensw/IMG_20250726_165046.jpg"
+alt="Misty road"
+data-category="Nature"
+data-title="Misty Mountain Road"
+data-desc="Road disappearing into thick mountain mist."
+loading="lazy">
+
+<img src="phonensw/IMG_20250726_181107.jpg"
+alt="Tall grass"
+data-category="Nature"
+data-title="Grasses in Wind"
+data-desc="Tall ornamental grasses swaying in breeze."
+loading="lazy">
+
+<img src="phonensw/IMG_20250726_181325.jpg"
+alt="Pink murdannia"
+data-category="Flower"
+data-title="Pink Murdannia"
+data-desc="Delicate pink three-petaled flower with white center."
+loading="lazy">
+
+<img src="phonensw/IMG_20250726_181332.jpg"
+alt="Pink dewdrop flower"
+data-category="Flower"
+data-title="Dewdrop Murdannia"
+data-desc="Pink flower with water droplets on petals."
+loading="lazy">
+
+<img src="phonensw/IMG_20250726_181750.jpg"
+alt="Foggy landscape"
+data-category="Nature"
+data-title="White Out"
+data-desc="Dense fog obscuring mountain landscape."
+loading="lazy">
+
+<img src="phonensw/IMG_20250726_184458.jpg"
+alt="Orange lantana"
+data-category="Flower"
+data-title="Orange Lantana"
+data-desc="Cluster of orange and yellow lantana flowers."
+loading="lazy">
+
+<img src="phonensw/IMG_20250810_191148_1.jpg"
+alt="Pink sunset"
+data-category="Nature"
+data-title="Rose Gold Sunset"
+data-desc="Pink and gold sunset sky over dark landscape."
+loading="lazy">
+
+<img src="phonensw/IMG_20250813_132118.jpg"
+alt="Foggy mountains"
+data-category="Nature"
+data-title="Misty Peaks"
+data-desc="Mountain peaks shrouded in morning fog."
+loading="lazy">
+
+<img src="phonensw/IMG_20250820_071353.jpg"
+alt="Pink chrysanthemum"
+data-category="Flower"
+data-title="Pink Chrysanthemum"
+data-desc="Full pink chrysanthemum with layered petals."
+loading="lazy">
+
+<img src="phonensw/IMG_20250820_071415.jpg"
+alt="Pink mum"
+data-category="Flower"
+data-title="Pink Garden Mum"
+data-desc="Soft pink chrysanthemum bloom in garden setting."
+loading="lazy">
+
+<img src="phonensw/IMG_20250820_071433.jpg"
+alt="Pink rose"
+data-category="Flower"
+data-title="Pink Rose"
+data-desc="Delicate pink rose with dew drops on petals."
+loading="lazy">
+
+<img src="phonensw/IMG_20250820_071601.jpg"
+alt="Red flowers"
+data-category="Flower"
+data-title="Red Salvia Border"
+data-desc="Vibrant red salvia flowers in garden border."
+loading="lazy">
+
+<img src="phonensw/IMG_20250820_071630.jpg"
+alt="Potted succulents"
+data-category="Nature"
+data-title="Tabletop Garden"
+data-desc="Arrangement of potted succulents with plant labels on wooden surface."
+loading="lazy">
+
+<img src="phonensw/IMG_20250820_071728.jpg"
+alt="Red celosia"
+data-category="Flower"
+data-title="Red Cockscomb"
+data-desc="Vibrant red celosia flower with brain-like texture."
+loading="lazy">
+
+<img src="phonensw/IMG_20250820_071745.jpg"
+data-category="Flower"
+data-title="Crimson Dianthus"
+data-desc="Deep red dianthus flower blooming in garden bed."
+loading="lazy">
+
+<img src="phonensw/IMG_20250820_071809.jpg"
+alt="Croton plant"
+data-category="Nature"
+data-title="Variegated Croton"
+data-desc="Colorful croton plant with red, green and yellow foliage."
+loading="lazy">
+
+<img src="phonensw/IMG_20250823_135933.jpg"
+alt="Red flowers"
+data-category="Flower"
+data-title="Scarlet Celosia"
+data-desc="Cluster of scarlet celosia flowers in garden setting."
+loading="lazy">
+
+<img src="phonensw/IMG_20250823_135950.jpg"
+alt="Orange marigold"
+data-category="Flower"
+data-title="Orange African Marigold"
+data-desc="Bright orange marigold with dense pom-pom bloom."
+loading="lazy">
+
+<img src="phonensw/IMG_20250831_092928.jpg"
+alt="Red hibiscus"
+data-category="Flower"
+data-title="Red Hibiscus"
+data-desc="Vivid red hibiscus flower with contrasting yellow stamen."
+loading="lazy">
+
+<img src="phonensw/IMG_20250904_225615.jpg"
+alt="Sun through clouds"
+data-category="Nature"
+data-title="Solar Halo"
+data-desc="Sun glowing through thick atmospheric haze and clouds."
+loading="lazy">
+
+<img src="phonensw/IMG_20251020_105028.jpg"
+alt="Forest trail"
+data-category="Nature"
+data-title="Forest Path"
+data-desc="Narrow trail winding through dense woodland trees."
+loading="lazy">
+
+<img src="phonensw/IMG_20251020_111946.jpg"
+alt="Woodland"
+data-category="Nature"
+data-title="Autumn Woodland"
+data-desc="Mixed forest with tall trees and dappled sunlight."
+loading="lazy">
+
+<img src="phonensw/IMG_20251020_113520.jpg"
+alt="Waterfall"
+data-category="Nature"
+data-title="Rocky Cascade"
+data-desc="Small waterfall flowing over moss-covered boulders."
+loading="lazy">
+
+<img src="phonensw/IMG_20251022_181805.jpg"
+alt="Sunset palm"
+data-category="Nature"
+data-title="Tropical Sunset"
+data-desc="Palm tree silhouetted against golden orange sunset sky."
+loading="lazy">
+
+<img src="phonensw/IMG_20251022_181847.jpg"
+alt="Lake sunset"
+data-category="Nature"
+data-title="Tranquil Dusk"
+data-desc="Calm lake reflecting pink and purple sunset clouds."
+loading="lazy">
+
+<img src="phonensw/IMG_20251022_181940.jpg"
+alt="Golden reflection"
+data-category="Nature"
+data-title="Golden Reflection"
+data-desc="Setting sun creating golden path across still lake waters."
+loading="lazy">
+
+<img src="phonensw/IMG_20251022_182042.jpg"
+alt="Purple dusk"
+data-category="Nature"
+data-title="Violet Hour"
+data-desc="Deep purple twilight sky over dark mountain silhouette."
+loading="lazy">
+
+<img src="phonensw/IMG_20251022_182051.jpg"
+alt="Pink twilight"
+data-category="Nature"
+data-title="Rose Twilight"
+data-desc="Pink and orange sunset colors reflected on lake surface."
+loading="lazy">
+
+<img src="phonensw/IMG_20251022_183208.jpg"
+alt="Blue hour lake"
+data-category="Nature"
+data-title="Blue Hour Serenity"
+data-desc="Lake during blue hour with soft purple and blue tones."
+loading="lazy">
+
+<img src="phonensw/IMG_20251022_183212.jpg"
+alt="Evening lake"
+data-category="Nature"
+data-title="Evening Calm"
+data-desc="Peaceful lake scene as day transitions to night."
+loading="lazy">
+
+<img src="phonensw/IMG_20251022_184149.jpg"
+alt="Night lake"
+data-category="Nature"
+data-title="Nocturnal Waters"
+data-desc="Lake at night with deep blue sky and darkened shoreline."
+loading="lazy">
+
+<img src="phonensw/IMG-20250820-WA0027.jpg"
+alt="River sunset"
+data-category="Nature"
+data-title="River Valley Sunset"
+data-desc="Wide river valley bathed in warm golden sunset light."
+loading="lazy">
+
+<img src="phonensw/Screenshot_2025-07-06-15-41-31-522_com.miui.compass-Photoroom (1).png"
+alt="Compass app"
+data-category="Nature"
+data-title="Navigation Compass"
+data-desc="Digital compass interface showing East direction and elevation data."
+loading="lazy">
+
+    </div>
+
+    <div style="text-align: center; margin-top: 50px; padding: 30px; color: var(--text-muted); border-top: 1px solid #333; font-size: 14px;">
+      <p>You have reached the end</p>
+    </div>
+  </div>
+
+  <div class="modal" id="imageModal">
+    <button class="close-x" onclick="closeModal()">&times;</button>
+    <div class="modal-content">
+      <div class="modal-image-container">
+        <img id="modalImg" src="" alt="">
+      </div>
+      <div class="modal-info">
+        <h2 id="modalTitle"></h2>
+        <p id="modalDesc"></p>
+                <div class="modal-actions">
+          <div class="quality-wrap">
+            <button class="btn-download" id="downloadBtn" onclick="toggleQualityOptions()">
+              <span>⬇️</span> Download
+            </button>
+            <div class="quality-options" id="qualityOptions">
+              <button class="quality-btn" onclick="downloadImage('high')">High Quality</button>
+              <button class="quality-btn" onclick="downloadImage('medium')">Medium Quality</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="toast" class="toast"></div>
+
+  <footer style="margin-top: 0;">
+    <p>2025 Zettapapers Wallpapers | All Rights Reserved | Designed by Daksh Jawale & helped by Dwij Ilme </p>
+  </footer>
+
+  <script src="main.js" defer></script>
+  <script src="gallery-common.js" defer></script>
+</body>
+</html>
+
+
+
+

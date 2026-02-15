@@ -1,0 +1,1016 @@
+
+<img src="pcnsw/Image 2025-08-16 at 19.09.30_4b3b16ec.png"
+alt="Misty palm tree landscape"
+data-category="Landscapes"
+data-title="Misty Palms"
+data-desc="Tall palm trees silhouetted against misty morning sky."
+loading="lazy">
+
+<img src="pcnsw/IMG_20241015_181725.jpg"
+alt="Purple flower"
+data-category="Nature Macro"
+data-title="Purple Wildflower"
+data-desc="Vibrant purple bloom with delicate petals in green foliage."
+loading="lazy">
+
+<img src="pcnsw/IMG_20241017_180643.jpg"
+alt="Succulent plant"
+data-category="Nature Macro"
+data-title="Succulent Detail"
+data-desc="Thick fleshy leaves of a succulent plant with red tips."
+loading="lazy">
+
+<img src="pcnsw/IMG_20241023_110418.jpg"
+alt="White jasmine flowers"
+data-category="Nature Macro"
+data-title="White Jasmine"
+data-desc="Cluster of star-shaped white jasmine flowers on vine."
+loading="lazy">
+
+<img src="pcnsw/IMG_20241101_113330.jpg"
+alt="Small pink flower"
+data-category="Nature Macro"
+data-title="Pink Wild Bloom"
+data-desc="Tiny pink flower with five delicate petals."
+loading="lazy">
+
+<img src="pcnsw/IMG_20241101_141850.jpg"
+alt="Yellow cosmos"
+data-category="Nature Macro"
+data-title="Yellow Cosmos"
+data-desc="Bright yellow cosmos flowers with finely divided leaves."
+loading="lazy">
+
+<img src="pcnsw/IMG_20241101_141901.jpg"
+alt="Yellow wildflowers"
+data-category="Nature Macro"
+data-title="Golden Field Flowers"
+data-desc="Cluster of cheerful yellow flowers in full bloom."
+loading="lazy">
+
+<img src="pcnsw/IMG_20241101_142117.jpg"
+alt="White periwinkle"
+data-category="Nature Macro"
+data-title="White Periwinkle"
+data-desc="Pure white periwinkle flower with five petals."
+loading="lazy">
+
+<img src="pcnsw/IMG_20241102_182957.jpg"
+alt="Dandelion seed head"
+data-category="Nature Macro"
+data-title="Dandelion Clock"
+data-desc="White fluffy dandelion seed head ready for dispersal."
+loading="lazy">
+
+<img src="pcnsw/IMG_20241103_121115.jpg"
+alt="Pink water lily"
+data-category="Nature Macro"
+data-title="Pink Water Lily"
+data-desc="Delicate pink water lily floating on dark water."
+loading="lazy">
+
+<img src="pcnsw/IMG_20241103_121116.jpg"
+alt="Water lily bloom"
+data-category="Nature Macro"
+data-title="Lotus Blossom"
+data-desc="Soft pink water lily with yellow center."
+loading="lazy">
+
+<img src="pcnsw/IMG_20241103_121159.jpg"
+alt="White water lily"
+data-category="Nature Macro"
+data-title="White Lotus"
+data-desc="Elegant white water lily with pale pink tips."
+loading="lazy">
+
+<img src="pcnsw/IMG_20241103_121200.jpg"
+alt="Water lily pair"
+data-category="Nature Macro"
+data-title="Twin Water Lilies"
+data-desc="Two water lilies blooming together on floating leaves."
+loading="lazy">
+
+<img src="pcnsw/IMG_20241103_122754.jpg"
+alt="Purple flowers"
+data-category="Nature Macro"
+data-title="Purple Cluster"
+data-desc="Dense cluster of tiny purple wildflowers."
+loading="lazy">
+
+<img src="pcnsw/IMG_20241103_173513.jpg"
+alt="Yellow flowers"
+data-category="Nature Macro"
+data-title="Yellow Flower Bed"
+data-desc="Bright yellow flowers with dark green leaves."
+loading="lazy">
+
+<img src="pcnsw/IMG_20241103_173740.jpg"
+alt="Industrial landscape"
+data-category="Landscapes"
+data-title="Power Lines at Dusk"
+data-desc="Industrial structures with transmission towers at sunset."
+loading="lazy">
+
+<img src="pcnsw/IMG_20241103_184415.jpg"
+alt="Misty lake sunset"
+data-category="Landscapes"
+data-title="Misty Lake"
+data-desc="Calm lake with reflections through evening mist."
+loading="lazy">
+
+<img src="pcnsw/IMG_20241104_070010.jpg"
+alt="Pink hibiscus"
+data-category="Nature Macro"
+data-title="Pink Hibiscus"
+data-desc="Soft pink hibiscus flower with red center."
+loading="lazy">
+
+<img src="pcnsw/IMG_20241104_070526.jpg"
+alt="Orange flower"
+data-category="Nature Macro"
+data-title="Orange Wildflower"
+data-desc="Vibrant orange bloom with dark center."
+loading="lazy">
+
+<img src="pcnsw/IMG_20241104_070850.jpg"
+alt="Yellow cosmos field"
+data-category="Nature Macro"
+data-title="Field of Gold"
+data-desc="Multiple yellow cosmos flowers in garden setting."
+loading="lazy">
+
+<img src="pcnsw/IMG_20241104_071123.jpg"
+alt="Green fern"
+data-category="Nature Macro"
+data-title="Fern Frond"
+data-desc="Lush green fern leaves with detailed texture."
+loading="lazy">
+
+<img src="pcnsw/IMG_20241104_081106.jpg"
+alt="Purple wildflower"
+data-category="Nature Macro"
+data-title="Purple Vinca"
+data-desc="Small purple periwinkle flower with five petals."
+loading="lazy">
+
+<img src="pcnsw/IMG_20241104_081453.jpg"
+alt="Butterfly on flower"
+data-category="Wildlife"
+data-title="Butterfly Feeding"
+data-desc="Butterfly resting on purple flower cluster."
+loading="lazy">
+
+<img src="pcnsw/IMG_20241104_081620.jpg"
+alt="Insect on plant"
+data-category="Wildlife"
+data-title="Small Beetle"
+data-desc="Tiny insect on green leaf with water droplets."
+loading="lazy">
+
+<img src="pcnsw/IMG_20241104_081657.jpg"
+alt="Pink bougainvillea"
+data-category="Nature Macro"
+data-title="Pink Paper Flower"
+data-desc="Vibrant pink bougainvillea bracts close-up."
+loading="lazy">
+
+<img src="pcnsw/IMG_20241104_081744.jpg"
+alt="Green lichen"
+data-category="Nature Macro"
+data-title="Lichen Texture"
+data-desc="Bright green lichen covering natural surface."
+loading="lazy">
+
+<img src="pcnsw/IMG_20241104_082836.jpg"
+alt="Green leaves"
+data-category="Nature Macro"
+data-title="Leaf Veins"
+data-desc="Close-up of green leaves showing vein patterns."
+loading="lazy">
+
+<img src="pcnsw/IMG_20241104_082839.jpg"
+alt="Yellow flowers"
+data-category="Nature Macro"
+data-title="Yellow Buttercups"
+data-desc="Bright yellow wildflowers in grass."
+loading="lazy">
+
+<img src="pcnsw/IMG_20241104_083133.jpg"
+alt="Blue hydrangea"
+data-category="Nature Macro"
+data-title="Blue Hydrangea"
+data-desc="Cluster of blue hydrangea flowers in bloom."
+loading="lazy">
+
+<img src="pcnsw/IMG_20241104_083204.jpg"
+alt="Pink wild rose"
+data-category="Nature Macro"
+data-title="Wild Rose"
+data-desc="Delicate pink wild rose with five petals."
+loading="lazy">
+
+<img src="pcnsw/IMG_20241104_083211.jpg"
+alt="Green aquatic plant"
+data-category="Nature Macro"
+data-title="Aquatic Fern"
+data-desc="Lush green fern growing at water's edge."
+loading="lazy">
+
+<img src="pcnsw/IMG_20241104_083310.jpg"
+alt="Purple hydrangea"
+data-category="Nature Macro"
+data-title="Purple Hydrangea"
+data-desc="Cluster of soft purple hydrangea blooms."
+loading="lazy">
+
+<img src="pcnsw/IMG_20241104_083401.jpg"
+alt="Pink flowers ground"
+data-category="Nature Macro"
+data-title="Pink Ground Cover"
+data-desc="Pink flowers spreading across dry ground."
+loading="lazy">
+
+<img src="pcnsw/IMG_20241104_083404.jpg"
+alt="Pink oxalis"
+data-category="Nature Macro"
+data-title="Pink Wood Sorrel"
+data-desc="Delicate pink shamrock flowers in soil."
+loading="lazy">
+
+<img src="pcnsw/IMG_20241104_083627.jpg"
+alt="Red hibiscus"
+data-category="Nature Macro"
+data-title="Scarlet Hibiscus"
+data-desc="Vivid red hibiscus with prominent stamen."
+loading="lazy">
+
+<img src="pcnsw/IMG_20241104_084612.jpg"
+alt="Green ivy"
+data-category="Nature Macro"
+data-title="Ivy Leaves"
+data-desc="Variegated green and white ivy foliage."
+loading="lazy">
+
+<img src="pcnsw/IMG_20241104_084704.jpg"
+alt="Dried lotus pod"
+data-category="Nature Macro"
+data-title="Lotus Seed Pod"
+data-desc="Dried seed head of lotus plant."
+loading="lazy">
+
+<img src="pcnsw/IMG_20241104_085338.jpg"
+alt="White flower grass"
+data-category="Nature Macro"
+data-title="White Wildflower"
+data-desc="Small white bloom among green grass."
+loading="lazy">
+
+<img src="pcnsw/IMG_20241104_085938.jpg"
+alt="Hilly landscape"
+data-category="Landscapes"
+data-title="Hillside View"
+data-desc="Rolling hills with green vegetation."
+loading="lazy">
+
+<img src="pcnsw/IMG_20241104_090842.jpg"
+alt="Red bougainvillea"
+data-category="Nature Macro"
+data-title="Crimson Bougainvillea"
+data-desc="Dense red bougainvillea flowers."
+loading="lazy">
+
+<img src="pcnsw/IMG_20241130_181307.jpg"
+alt="Pink clouds"
+data-category="Landscapes"
+data-title="Pink Sky"
+data-desc="Pink sunset clouds over dark landscape."
+loading="lazy">
+
+<img src="pcnsw/IMG_20241221_074043.webp"
+alt="White flower"
+data-category="Nature Macro"
+data-title="White Jasmine"
+data-desc="Pure white jasmine bloom close-up."
+loading="lazy">
+
+<img src="pcnsw/IMG_20241229_082550.jpg"
+alt="Purple flowers"
+data-category="Nature Macro"
+data-title="Purple Bloom Cluster"
+data-desc="Cluster of small purple wildflowers."
+loading="lazy">
+
+<img src="pcnsw/IMG_20241229_090116.jpg"
+alt="Yellow dandelion"
+data-category="Nature Macro"
+data-title="Yellow Dandelion"
+data-desc="Bright yellow dandelion flower head."
+loading="lazy">
+
+<img src="pcnsw/IMG_20241230_101112.jpg"
+alt="Red berries"
+data-category="Nature Macro"
+data-title="Winter Berries"
+data-desc=" clusters of red berries on bare branches."
+loading="lazy">
+
+<img src="pcnsw/IMG_20241231_162456.jpg"
+alt="Sea view"
+data-category="Landscapes"
+data-title="Coastal View"
+data-desc="Rocky coastline with blue sea and sky."
+loading="lazy">
+
+<img src="pcnsw/IMG_20250101_130423.jpg"
+alt="Green foliage"
+data-category="Nature Macro"
+data-title="Tropical Leaves"
+data-desc="Lush green tropical plant leaves."
+loading="lazy">
+
+<img src="pcnsw/IMG_20250101_130448.jpg"
+alt="Purple flowers"
+data-category="Nature Macro"
+data-title="Violet Wildflowers"
+data-desc="Tiny violet flowers in garden setting."
+loading="lazy">
+
+<img src="pcnsw/IMG_20250101_163327.jpg"
+alt="Forest view"
+data-category="Landscapes"
+data-title="Forest Vista"
+data-desc="Dense forest landscape stretching to horizon."
+loading="lazy">
+
+<img src="pcnsw/IMG_20250101_163344.jpg"
+alt="Mountain landscape"
+data-category="Landscapes"
+data-title="Mountain View"
+data-desc="Distant mountain peak in morning light."
+loading="lazy">
+
+<img src="pcnsw/IMG_20250208_141426.jpg"
+alt="Pink bougainvillea"
+data-category="Nature Macro"
+data-title="Magenta Bougainvillea"
+data-desc="Vibrant magenta bougainvillea bracts."
+loading="lazy">
+
+<img src="pcnsw/IMG_20250208_141427.jpg"
+alt="Pink flowers"
+data-category="Nature Macro"
+data-title="Pink Floral Display"
+data-desc="Bright pink flowers in dense clusters."
+loading="lazy">
+
+<img src="pcnsw/IMG_20250208_141512.jpg"
+alt="Red flower"
+data-category="Nature Macro"
+data-title="Red Bloom"
+data-desc="Deep red flower with green foliage."
+loading="lazy">
+
+<img src="pcnsw/IMG_20250208_141537.jpg"
+alt="Yellow flowers"
+data-category="Nature Macro"
+data-title="Yellow Cluster"
+data-desc="Bright yellow flowers in garden bed."
+loading="lazy">
+
+<img src="pcnsw/IMG_20250208_141549.jpg"
+alt="Pale purple flowers"
+data-category="Nature Macro"
+data-title="Pale Lilac"
+data-desc="Soft lavender colored flower cluster."
+loading="lazy">
+
+<img src="pcnsw/IMG_20250208_141550.jpg"
+alt="Light blue flowers"
+data-category="Nature Macro"
+data-title="Pale Blue Blooms"
+data-desc="Delicate light blue flowers on bush."
+loading="lazy">
+
+<img src="pcnsw/IMG_20250228_174113.jpg"
+alt="Monument structure"
+data-category="Built Heritage"
+data-title="Victory Tower"
+data-desc="Tall monument structure against sunset sky."
+loading="lazy">
+
+<img src="pcnsw/IMG_20250503_185226.jpg"
+alt="Sunset sea"
+data-category="Landscapes"
+data-title="Golden Sunset"
+data-desc="Sun setting over calm waters with warm light."
+loading="lazy">
+
+<img src="pcnsw/IMG_20250503_185308.jpg"
+alt="Evening landscape"
+data-category="Landscapes"
+data-title="Twilight Scene"
+data-desc="Orange glow of sunset over distant land."
+loading="lazy">
+
+<img src="pcnsw/IMG_20250517_121123.jpg"
+alt="Birds on branch"
+data-category="Wildlife"
+data-title="Perched Birds"
+data-desc="Small birds resting on tree branches."
+loading="lazy">
+
+<img src="pcnsw/IMG_20250517_121655.jpg"
+alt="Garden with arches"
+data-category="Landscapes"
+data-title="Garden Arches"
+data-desc="Lush garden with wooden archway structures."
+loading="lazy">
+
+<img src="pcnsw/IMG_20250517_122407.jpg"
+alt="Garden pond"
+data-category="Landscapes"
+data-title="Tranquil Pond"
+data-desc="Peaceful garden pond surrounded by tropical vegetation."
+loading="lazy">
+
+<img src="pcnsw/IMG_20250517_123930.jpg"
+alt="Monkey on branch"
+data-category="Wildlife"
+data-title="Monkey Resting"
+data-desc="Monkey sitting on tree branch in natural habitat."
+loading="lazy">
+
+<img src="pcnsw/IMG_20250517_123953.jpg"
+alt="Monkey close up"
+data-category="Wildlife"
+data-title="Primate Portrait"
+data-desc="Close view of monkey grooming on branch."
+loading="lazy">
+
+<img src="pcnsw/IMG_20250517_125253.jpg"
+alt="Peacock on grass"
+data-category="Wildlife"
+data-title="Peacock Foraging"
+data-desc="Indian peafowl walking on green lawn."
+loading="lazy">
+
+<img src="pcnsw/IMG_20250517_125532.jpg"
+alt="Garden path"
+data-category="Landscapes"
+data-title="Stone Pathway"
+data-desc="Curved stone path through manicured garden."
+loading="lazy">
+
+<img src="pcnsw/IMG_20250517_125534.jpg"
+alt="Garden walkway"
+data-category="Landscapes"
+data-title="Garden Walk"
+data-desc="Covered walkway through lush tropical garden."
+loading="lazy">
+
+<img src="pcnsw/IMG_20250517_131128.jpg"
+alt="Garden fence"
+data-category="Landscapes"
+data-title="Bamboo Fence"
+data-desc="Traditional bamboo fence in garden setting."
+loading="lazy">
+
+<img src="pcnsw/IMG_20250517_133200.jpg"
+alt="Bird in aviary"
+data-category="Wildlife"
+data-title="Aviary Bird"
+data-desc="Colorful bird perched inside large wire aviary."
+loading="lazy">
+
+<img src="pcnsw/IMG_20250517_133209.jpg"
+alt="Monkey climbing"
+data-category="Wildlife"
+data-title="Monkey in Motion"
+data-desc="Monkey climbing through tree branches."
+loading="lazy">
+
+<img src="pcnsw/IMG_20250517_133703.jpg"
+alt="Blue macaw"
+data-category="Wildlife"
+data-title="Hyacinth Macaw"
+data-desc="Brilliant blue macaw with yellow eye patches."
+loading="lazy">
+
+<img src="pcnsw/IMG_20250517_133732.jpg"
+alt="Macaw pair"
+data-category="Wildlife"
+data-title="Macaw Couple"
+data-desc="Two macaws sharing a wooden perch."
+loading="lazy">
+
+<img src="pcnsw/IMG_20250517_133822.jpg"
+alt="Blue and yellow macaws"
+data-category="Wildlife"
+data-title="Blue-and-Yellow Macaws"
+data-desc="Pair of vibrant blue and yellow macaws on rail."
+loading="lazy">
+
+<img src="pcnsw/IMG_20250517_133956.jpg"
+alt="Green macaw"
+data-category="Wildlife"
+data-title="Great Green Macaw"
+data-desc="Large green macaw with red forehead markings."
+loading="lazy">
+
+<img src="pcnsw/IMG_20250517_134023_1.jpg"
+alt="Toucan"
+data-category="Wildlife"
+data-title="Toucan on Branch"
+data-desc="Colorful toucan with large beak on tree branch."
+loading="lazy">
+
+<img src="pcnsw/IMG_20250517_134955.jpg"
+alt="Aviary structure"
+data-category="Built Heritage"
+data-title="Bird Aviary Dome"
+data-desc="Large wire mesh aviary structure in zoo."
+loading="lazy">
+
+<img src="pcnsw/IMG_20250517_135440.jpg"
+alt="Pink flower"
+data-category="Nature Macro"
+data-title="Pink Trumpet Flower"
+data-desc="Delicate pink trumpet-shaped bloom."
+loading="lazy">
+
+<img src="pcnsw/IMG_20250517_183603.jpg"
+alt="Silhouette at sunset"
+data-category="Landscapes"
+data-title="Sunset Silhouette"
+data-desc="Person standing against golden sunset sky."
+loading="lazy">
+
+<img src="pcnsw/IMG_20250517_183924.jpg"
+alt="Lake and mountains"
+data-category="Landscapes"
+data-title="Mountain Lake"
+data-desc="Serene lake with mountains in background."
+loading="lazy">
+
+<img src="pcnsw/IMG_20250517_195445.jpg"
+alt="Statue at night"
+data-category="Built Heritage"
+data-title="Statue of Unity Night"
+data-desc="Illuminated bronze statue against dark sky."
+loading="lazy">
+
+<img src="pcnsw/IMG_20250517_195533.jpg"
+alt="Statue illuminated"
+data-category="Built Heritage"
+data-title="Monument Lighting"
+data-desc="Statue of Unity with dramatic night lighting."
+loading="lazy">
+
+<img src="pcnsw/IMG_20250518_112801.jpg"
+alt="White jasmine"
+data-category="Nature Macro"
+data-title="White Jasmine"
+data-desc="Cluster of white jasmine flowers on vine."
+loading="lazy">
+
+<img src="pcnsw/IMG_20250518_112803.jpg"
+alt="White flowers"
+data-category="Nature Macro"
+data-title="Jasmine Blooms"
+data-desc="Delicate white flowers with yellow centers."
+loading="lazy">
+
+<img src="pcnsw/IMG_20250518_150830.jpg"
+alt="Potted plants"
+data-category="Nature Macro"
+data-title="Container Garden"
+data-desc="Arrangement of potted plants in garden setting."
+loading="lazy">
+
+<img src="pcnsw/IMG_20250518_152251.jpg"
+alt="Green hedge"
+data-category="Nature Macro"
+data-title="Formal Hedge"
+data-desc="Neatly trimmed green hedge row."
+loading="lazy">
+
+<img src="pcnsw/IMG_20250518_152805.jpg"
+alt="Hedge pathway"
+data-category="Nature Macro"
+data-title="Hedge Labyrinth"
+data-desc="Pathway between tall manicured hedges."
+loading="lazy">
+
+<img src="pcnsw/IMG_20250522_191725.jpg"
+alt="Golden sunset"
+data-category="Landscapes"
+data-title="Golden Hour"
+data-desc="Warm golden sunset light over landscape."
+loading="lazy">
+
+<img src="pcnsw/IMG_20250522_191812.jpg"
+alt="Orange clouds"
+data-category="Landscapes"
+data-title="Sunset Clouds"
+data-desc="Vibrant orange and pink sunset clouds."
+loading="lazy">
+
+<img src="pcnsw/IMG_20250522_194341.jpg"
+alt="Mountain sky"
+data-category="Landscapes"
+data-title="Mountain Blue Sky"
+data-desc="Mountain peak against clear blue sky."
+loading="lazy">
+
+<img src="pcnsw/IMG_20250523_095319.jpg"
+alt="Purple flowers"
+data-category="Nature Macro"
+data-title="Purple Vinca"
+data-desc="Small purple periwinkle flowers in bloom."
+loading="lazy">
+
+<img src="pcnsw/IMG_20250523_095352.jpg"
+alt="Pink flowers"
+data-category="Nature Macro"
+data-title="Pink Climbing Roses"
+data-desc="Delicate pink roses climbing on wooden structure."
+loading="lazy">
+
+<img src="pcnsw/IMG_20250523_095744.jpg"
+alt="Purple flowers vine"
+data-category="Nature Macro"
+data-title="Purple Fence Flowers"
+data-desc="Violet morning glory vines on wooden fence."
+loading="lazy">
+
+<img src="pcnsw/IMG_20250523_140051.jpg"
+alt="Statue view"
+data-category="Built Heritage"
+data-title="Statue Valley View"
+data-desc="Statue of Unity visible from distant valley."
+loading="lazy">
+
+<img src="pcnsw/IMG_20250523_142907-Photoroom.png"
+alt="Mountain landscape"
+data-category="Landscapes"
+data-title="Mountain Vista"
+data-desc="Panoramic view of mountain ranges and valley."
+loading="lazy">
+
+<img src="pcnsw/IMG_20250523_143241.jpg"
+alt="Valley view"
+data-category="Landscapes"
+data-title="Narmada Valley"
+data-desc="Wide valley view with river and landscape."
+loading="lazy">
+
+<img src="pcnsw/IMG_20250523_143253.jpg"
+alt="Green hills"
+data-category="Landscapes"
+data-title="Verdant Hills"
+data-desc="Lush green hills stretching to horizon."
+loading="lazy">
+
+<img src="pcnsw/IMG_20250523_143257.jpg"
+alt="Valley with statue"
+data-category="Landscapes"
+data-title="Valley Perspective"
+data-desc="Vast valley with Statue of Unity in distance."
+loading="lazy">
+
+<img src="pcnsw/IMG_20250523_143413.jpg"
+alt="Domed structure"
+data-category="Built Heritage"
+data-title="Dome Architecture"
+data-desc="Ornate domed building against mountain backdrop."
+loading="lazy">
+
+<img src="pcnsw/IMG_20250523_143744-Photoroom.png"
+alt="Courtyard"
+data-category="Built Heritage"
+data-title="Symmetrical Courtyard"
+data-desc="Formal garden courtyard with central fountain."
+loading="lazy">
+
+<img src="pcnsw/IMG_20250523_143951.jpg"
+alt="White architecture"
+data-category="Built Heritage"
+data-title="Crenelated Wall"
+data-desc="White decorative wall with pointed arches."
+loading="lazy">
+
+<img src="pcnsw/IMG_20250524_111314.jpg"
+alt="Tree branch"
+data-category="Nature Macro"
+data-title="Branch Silhouette"
+data-desc="Tree branch with new leaves against blue sky."
+loading="lazy">
+
+<img src="pcnsw/IMG_20250524_111319.jpg"
+alt="Mountain greenery"
+data-category="Landscapes"
+data-title="Green Mountain Slope"
+data-desc="Forest covered mountain side with valley view."
+loading="lazy">
+
+<img src="pcnsw/IMG_20250524_131017.jpg"
+alt="Rock wall"
+data-category="Landscapes"
+data-title="Rock Formation"
+data-desc="Large natural rock face with texture."
+loading="lazy">
+
+<img src="pcnsw/IMG_20250524_133332.jpg"
+alt="Cave entrance"
+data-category="Landscapes"
+data-title="Rocky Overhang"
+data-desc="Natural rock shelter with greenery growing."
+loading="lazy">
+
+<img src="pcnsw/IMG_20250524_141209.jpg"
+alt="Sun through leaves"
+data-category="Nature Macro"
+data-title="Filtered Sunlight"
+data-desc="Sun rays shining through tree canopy."
+loading="lazy">
+
+<img src="pcnsw/IMG_20250524_175421.jpg"
+alt="Green foliage"
+data-category="Nature Macro"
+data-title="Tropical Foliage"
+data-desc="Dense green leaves with tropical appearance."
+loading="lazy">
+
+<img src="pcnsw/IMG_20250524_175432.jpg"
+alt="Leaf close up"
+data-category="Nature Macro"
+data-title="Leaf Detail"
+data-desc="Close view of green leaf with water droplets."
+loading="lazy">
+
+<img src="pcnsw/IMG_20250524_183325.jpg"
+alt="Fortress ruins"
+data-category="Built Heritage"
+data-title="Ancient Fort"
+data-desc="Historic fort ruins on hilltop."
+loading="lazy">
+
+<img src="pcnsw/IMG_20250618_223415.jpg"
+alt="White night flower"
+data-category="Nature Macro"
+data-title="Night Blooming Jasmine"
+data-desc="White fragrant flower opening at night."
+loading="lazy">
+
+<img src="pcnsw/IMG_20250706_163443.jpg"
+alt="Green ivy leaves"
+data-category="Nature Macro"
+data-title="Ivy Ground Cover"
+data-desc="Lush green ivy covering rocky surface."
+loading="lazy">
+
+<img src="pcnsw/IMG_20250706_163648.jpg"
+alt="White wildflowers"
+data-category="Nature Macro"
+data-title="White Meadow Flowers"
+data-desc="Cluster of small white blooms with green leaves."
+loading="lazy">
+
+<img src="pcnsw/IMG_20250706_163907.jpg"
+alt="Forest stream"
+data-category="Landscapes"
+data-title="Mossy Stream"
+data-desc="Small stream flowing through mossy forest rocks."
+loading="lazy">
+
+<img src="pcnsw/IMG_20250726_160439.jpg"
+alt="Misty path"
+data-category="Landscapes"
+data-title="Foggy Road"
+data-desc="Road disappearing into thick white fog."
+loading="lazy">
+
+<img src="pcnsw/IMG_20250726_160442.jpg"
+alt="Tea plantation"
+data-category="Landscapes"
+data-title="Tea Estate"
+data-desc="Lush green tea bushes on rolling hills in mist."
+loading="lazy">
+
+<img src="pcnsw/IMG_20250726_160451.jpg"
+alt="Foggy palms"
+data-category="Landscapes"
+data-title="Misty Palms"
+data-desc="Tall palm trees silhouetted in fog."
+loading="lazy">
+
+<img src="pcnsw/IMG_20250726_160655.jpg"
+alt="Stone structure"
+data-category="Built Heritage"
+data-title="Ruined Structure"
+data-desc="Old stone ruins covered with green moss."
+loading="lazy">
+
+<img src="pcnsw/IMG_20250726_164741.jpg"
+alt="Tea field path"
+data-category="Landscapes"
+data-title="Tea Plantation Path"
+data-desc="Narrow path through misty tea gardens."
+loading="lazy">
+
+<img src="pcnsw/IMG_20250726_164743.jpg"
+alt="Misty tea fields"
+data-category="Landscapes"
+data-title="Cloud Covered Tea"
+data-desc="Tea plantations shrouded in low clouds."
+loading="lazy">
+
+<img src="pcnsw/IMG_20250726_164750.jpg"
+alt="Path through tea"
+data-category="Landscapes"
+data-title="Highland Tea Estate"
+data-desc="Walking path through lush tea plantation."
+loading="lazy">
+
+<img src="pcnsw/IMG_20250726_164754.jpg"
+alt="Misty plantation path"
+data-category="Landscapes"
+data-title="Misty Terrace"
+data-desc="Path winding through terraced tea plantations in fog."
+loading="lazy">
+
+<img src="pcnsw/IMG_20250726_165048.jpg"
+alt="Foggy tree tunnel"
+data-category="Landscapes"
+data-title="Misty Avenue"
+data-desc="Tree-lined path disappearing into thick morning fog."
+loading="lazy">
+
+<img src="pcnsw/IMG_20250810_191137.jpg"
+alt="Pink sunset sky"
+data-category="Landscapes"
+data-title="Rose Sunset"
+data-desc="Dramatic pink and orange sunset clouds over silhouette."
+loading="lazy">
+
+<img src="pcnsw/IMG_20250810_191137_1.jpg"
+alt="Dusk landscape"
+data-category="Landscapes"
+data-title="Evening Glow"
+data-desc="Colorful twilight sky with tree silhouettes."
+loading="lazy">
+
+<img src="pcnsw/IMG_20250813_132005.jpg"
+alt="Misty forest"
+data-category="Landscapes"
+data-title="Foggy Woods"
+data-desc="Dense fog obscuring forest trees."
+loading="lazy">
+
+<img src="pcnsw/IMG_20250813_132313.jpg"
+alt="Foggy trail"
+data-category="Landscapes"
+data-title="Misty Trail"
+data-desc="Narrow trail through fog-covered vegetation."
+loading="lazy">
+
+<img src="pcnsw/IMG_20250813_132431.jpg"
+alt="Green misty field"
+data-category="Landscapes"
+data-title="Misty Greens"
+data-desc="Lush green landscape enveloped in white mist."
+loading="lazy">
+
+<img src="pcnsw/IMG_20250813_132547.jpg"
+alt="Forest path fog"
+data-category="Landscapes"
+data-title="Enchanted Path"
+data-desc="Sunbeams filtering through fog on forest walk."
+loading="lazy">
+
+<img src="pcnsw/IMG_20250820_071513.jpg"
+alt="Pink roses"
+data-category="Nature Macro"
+data-title="Pink Rose Cluster"
+data-desc="Vibrant pink roses blooming on bush."
+loading="lazy">
+
+<img src="pcnsw/IMG_20250820_071552.jpg"
+alt="Flower bud"
+data-category="Nature Macro"
+data-title="Emerging Bloom"
+data-desc="Pink flower bud about to open."
+loading="lazy">
+
+<img src="pcnsw/IMG_20250820_071820.jpg"
+alt="Potted hibiscus"
+data-category="Nature Macro"
+data-title="Potted Bloom"
+data-desc="Pink flower in container with green leaves."
+loading="lazy">
+
+<img src="pcnsw/IMG_20250823_140225.jpg"
+alt="Red salvia"
+data-category="Nature Macro"
+data-title="Red Salvia Spikes"
+data-desc="Vivid red flower spikes in garden."
+loading="lazy">
+
+<img src="pcnsw/IMG_20250904_225531.jpg"
+alt="Hazy sun"
+data-category="Landscapes"
+data-title="Solar Halo"
+data-desc="Sun glowing through atmospheric haze."
+loading="lazy">
+
+<img src="pcnsw/IMG_20250904_225538.jpg"
+alt="Diffused sunlight"
+data-category="Landscapes"
+data-title="Hazy Afternoon"
+data-desc="Bright sun diffused by thin clouds."
+loading="lazy">
+
+<img src="pcnsw/IMG_20250906_213604.jpg"
+alt="Full moon"
+data-category="Landscapes"
+data-title="Full Moon"
+data-desc="Bright full moon against black night sky."
+loading="lazy">
+
+<img src="pcnsw/IMG_20251020_105605.jpg"
+alt="Forest interior"
+data-category="Landscapes"
+data-title="Deep Forest"
+data-desc="Dense woodland with tall trees."
+loading="lazy">
+
+<img src="pcnsw/IMG_20251020_110819.jpg"
+alt="Sunlit canopy"
+data-category="Landscapes"
+data-title="Sun Through Trees"
+data-desc="Sunlight piercing through forest canopy."
+loading="lazy">
+
+<img src="pcnsw/IMG_20251022_181843.jpg"
+alt="Sunset hills"
+data-category="Landscapes"
+data-title="Golden Dusk"
+data-desc="Hills silhouetted against orange sunset."
+loading="lazy">
+
+<img src="pcnsw/IMG_20251022_181934.jpg"
+alt="Lake reflection"
+data-category="Landscapes"
+data-title="Mirror Lake"
+data-desc="Perfect reflection of sky in calm lake water."
+loading="lazy">
+
+<img src="pcnsw/IMG_20251022_182039.jpg"
+alt="Blue hour lake"
+data-category="Landscapes"
+data-title="Blue Hour"
+data-desc="Lake during blue hour with purple sky."
+loading="lazy">
+
+<img src="pcnsw/IMG_20251022_182049.jpg"
+alt="Evening waters"
+data-category="Landscapes"
+data-title="Tranquil Evening"
+data-desc="Calm lake surface at twilight."
+loading="lazy">
+
+<img src="pcnsw/IMG_20251022_183158.jpg"
+alt="Twilight mountains"
+data-category="Landscapes"
+data-title="Mountain Twilight"
+data-desc="Dark mountain silhouettes against fading light."
+loading="lazy">
+
+<img src="pcnsw/IMG_20251022_184157.jpg"
+alt="Night lake"
+data-category="Landscapes"
+data-title="Nocturnal Waters"
+data-desc="Lake at night with deep blue tones."
+loading="lazy">
+
+<img src="pcnsw/IMG_20251023_080250.jpg"
+alt="Rocky landscape"
+data-category="Landscapes"
+data-title="Rocky Terrain"
+data-desc="Red rocky outcrop with vegetation."
+loading="lazy">
+
+<img src="pcnsw/IMG_20251023_080606.jpg"
+alt="Cloudy lake day"
+data-category="Landscapes"
+data-title="Overcast Lake"
+data-desc="Lake under heavy gray cloud cover."
+loading="lazy">
+
+<img src="pcnsw/IMG_20251024_084740.jpg"
+alt="Sunrise lake"
+data-category="Landscapes"
+data-title="Dawn Breaking"
+data-desc="Sunrise over calm lake waters."
+loading="lazy">
+

@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Zettapapers Internal Admin</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --bg:#05060a;
+  --panel:#0f1720;
+  --accent:#f5c86a;
+  --text:#e5e7eb;
+  --muted:#9ca3af;
+  --danger:#ef4444;
+  --success:#22c55e;
+}
+*{box-sizing:border-box;font-family:'Orbitron',sans-serif}
+body{
+  margin:0;
+  background:linear-gradient(180deg,#05060a,#081018);
+  color:var(--text);
+}
+
+/* LOGIN */
+#login-screen{
+  height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+.login-box{
+  width:380px;
+  background:var(--panel);
+  padding:32px;
+  border-radius:14px;
+  box-shadow:0 0 40px rgba(245,200,106,.15);
+}
+.login-box h2{
+  margin:0 0 10px;
+  text-align:center;
+  color:var(--accent);
+}
+.login-box input{
+  width:100%;
+  padding:12px;
+  margin-top:14px;
+  background:#020617;
+  border:1px solid #1f2933;
+  border-radius:8px;
+  color:var(--text);
+}
+.login-box button{
+  width:100%;
+  margin-top:20px;
+  padding:12px;
+  border:none;
+  border-radius:8px;
+  background:linear-gradient(90deg,var(--accent),#ffd58a);
+  font-weight:700;
+  cursor:pointer;
+}
+#error-msg{
+  display:none;
+  color:var(--danger);
+  text-align:center;
+  margin-top:12px;
+}
+
+/* DASHBOARD */
+#dashboard{
+  display:none;
+  padding:20px;
+}
+
+.header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  border-bottom:1px solid #1f2933;
+  padding-bottom:10px;
+}
+.status-dot{
+  width:10px;
+  height:10px;
+  background:var(--success);
+  border-radius:50%;
+  display:inline-block;
+  margin-right:6px;
+}
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+  gap:16px;
+  margin-top:20px;
+}
+
+.card{
+  background:var(--panel);
+  padding:16px;
+  border-radius:12px;
+  position:relative;
+}
+
+.card h4{
+  margin:0;
+  font-size:13px;
+  color:var(--muted);
+}
+.card p{
+  margin:6px 0 0;
+  font-size:22px;
+  color:var(--accent);
+}
+
+.progress{
+  height:8px;
+  background:#020617;
+  border-radius:6px;
+  overflow:hidden;
+  margin-top:8px;
+}
+.fill{
+  height:100%;
+  background:linear-gradient(90deg,var(--accent),#ffd58a);
+  width:0%;
+  transition:width .5s ease;
+}
+
+/* CONTROLS */
+.controls{
+  margin-top:26px;
+  background:var(--panel);
+  padding:18px;
+  border-radius:14px;
+}
+.controls h3{
+  margin-top:0;
+  color:var(--accent);
+}
+.buttons{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(160px,1fr));
+  gap:12px;
+}
+.buttons button{
+  padding:12px;
+  background:#0b1220;
+  border:none;
+  border-radius:10px;
+  color:var(--muted);
+  cursor:pointer;
+  transition:.2s;
+}
+.buttons button:hover{
+  color:var(--accent);
+  box-shadow:0 0 25px rgba(245,200,106,.25);
+}
+
+/* LOGS */
+.logs{
+  margin-top:20px;
+  background:var(--panel);
+  padding:14px;
+  border-radius:12px;
+  max-height:180px;
+  overflow:auto;
+  font-size:12px;
+  color:var(--muted);
+}
+
+#toast{
+  position:fixed;
+  bottom:20px;
+  right:20px;
+  background:var(--panel);
+  padding:12px 18px;
+  border-left:4px solid var(--accent);
+  display:none;
+}
+</style>
+</head>
+
+<body>
+
+<!-- LOGIN -->
+<div id="login-screen">
+  <div class="login-box">
+    <h2>Zettapapers Internal</h2>
+    <input id="username" placeholder="Username">
+    <input id="password" type="password" placeholder="Password">
+    <button id="loginBtn">Authenticate</button>
+    <div id="error-msg">Invalid credentials</div>
+  </div>
+</div>
+
+<!-- DASHBOARD -->
+<div id="dashboard">
+  <div class="header">
+    <h2>Admin Console — zettaadmin</h2>
+    <div><span class="status-dot"></span>Production Server</div>
+  </div>
+
+  <div class="grid">
+    <div class="card">
+      <h4>CPU Usage</h4>
+      <p id="cpuText">0%</p>
+      <div class="progress"><div class="fill" id="cpuBar"></div></div>
+    </div>
+
+    <div class="card">
+      <h4>Memory Usage</h4>
+      <p id="ramText">0%</p>
+      <div class="progress"><div class="fill" id="ramBar"></div></div>
+    </div>
+
+    <div class="card"><h4>Disk Utilization</h4><p id="disk">412 / 1024 GB</p></div>
+    <div class="card"><h4>Active Sessions</h4><p id="sessions">0</p></div>
+    <div class="card"><h4>Live Users</h4><p id="users">0</p></div>
+    <div class="card"><h4>Requests / Minute</h4><p id="rpm">0</p></div>
+    <div class="card"><h4>DB Latency</h4><p id="db">0 ms</p></div>
+    <div class="card"><h4>Bandwidth</h4><p id="bw">0 MB/s</p></div>
+    <div class="card"><h4>Load Average</h4><p id="load">0.00</p></div>
+    <div class="card"><h4>Connection Pool</h4><p id="pool">0 / 150</p></div>
+    <div class="card"><h4>Security Events</h4><p id="sec">0</p></div>
+  </div>
+
+  <div class="controls">
+    <h3>Administrative Actions</h3>
+    <div class="buttons" id="buttons"></div>
+  </div>
+
+  <div class="logs" id="logs"></div>
+</div>
+
+<div id="toast"></div>
+
+<script>
+const VALID_USER="zettaadmin";
+const VALID_PASS="itisco";
+
+const loginBtn=document.getElementById("loginBtn");
+const loginScreen=document.getElementById("login-screen");
+const dashboard=document.getElementById("dashboard");
+const errorMsg=document.getElementById("error-msg");
+const toastBox=document.getElementById("toast");
+
+loginBtn.addEventListener("click",()=>{
+  const u=document.getElementById("username").value;
+  const p=document.getElementById("password").value;
+  if(u===VALID_USER && p===VALID_PASS){
+    loginScreen.style.display="none";
+    dashboard.style.display="block";
+    initButtons();
+    startSimulation();
+    addLog("Authenticated to production environment");
+  }else{
+    errorMsg.style.display="block";
+  }
+});
+
+/* 100 UNIQUE BUTTONS */
+function initButtons(){
+  const actions=[
+  "Approve Wallpaper","Delete Wallpaper","Feature Image","Ban User","Unban User",
+  "Sync CDN","Purge Cache","Backup Database","Restore Snapshot","Optimize Images",
+  "Rotate Logs","Audit Security","Rebuild Search Index","Flush DNS","Invalidate Tokens",
+  "Scale Workers","Restart Node Cluster","Enable Maintenance Mode","Disable Maintenance Mode","Generate Analytics Report",
+  "Clear Temp Files","Verify File Integrity","Reset User Password","Promote Moderator","Demote Moderator",
+  "Block IP Address","Unblock IP Address","Trigger System Scan","Force Logout All Users","Deploy Update Patch",
+  "Rollback Update","Reindex Database","Compress Media Assets","Regenerate Thumbnails","Clear CDN Edge Cache",
+  "Lock Admin Panel","Unlock Admin Panel","View Audit Trail","Export User Data","Import User Data",
+  "Activate Beta Feature","Deactivate Beta Feature","Start Load Test","Stop Load Test","Enable Debug Mode",
+  "Disable Debug Mode","Refresh API Tokens","Reset API Keys","Monitor Geo Traffic","Enable Firewall",
+  "Disable Firewall","Sync Backup Server","Restart Database","Optimize Queries","Clear Error Logs",
+  "Enable Rate Limiting","Disable Rate Limiting","Force HTTPS Redirect","Generate Sitemap","Rebuild Image Cache",
+  "Scan Malware","Remove Suspicious Activity","Update Security Rules","Lock Suspicious Account","Unlock Suspicious Account",
+  "Force Data Sync","Start Background Jobs","Stop Background Jobs","Flush Redis Cache","Reconnect Database",
+  "Test Email Service","Restart Email Queue","Enable Two-Factor Auth","Disable Two-Factor Auth","View System Metrics",
+  "Enable Traffic Monitor","Disable Traffic Monitor","Scale Down Workers","Scale Up Workers","Reset Server Metrics",
+  "Clear Session Store","Invalidate All Sessions","Check Server Health","Reboot Server","Soft Restart Services",
+  "Hard Restart Services","Update CDN Config","Reset CDN Config","Enable Logging","Disable Logging",
+  "Export Analytics CSV","Import Analytics CSV","Generate Usage Report","Clear Upload Queue","Retry Failed Jobs",
+  "Recalculate Statistics","Verify SSL Certificate","Renew SSL Certificate","Flush Network Cache","Start System Diagnostics"
+  ];
+
+  const container=document.getElementById("buttons");
+  container.innerHTML="";
+
+  actions.forEach(action=>{
+    const btn=document.createElement("button");
+    btn.textContent=action;
+    btn.onclick=()=>{
+      addLog(action+" executed");
+      showToast(action);
+    };
+    container.appendChild(btn);
+  });
+}
+
+/* LIVE SIMULATION */
+function startSimulation(){
+  setInterval(()=>{
+    const cpu=Math.floor(20+Math.random()*70);
+    const ram=Math.floor(30+Math.random()*60);
+
+    document.getElementById("cpuText").textContent=cpu+"%";
+    document.getElementById("cpuBar").style.width=cpu+"%";
+
+    document.getElementById("ramText").textContent=ram+"%";
+    document.getElementById("ramBar").style.width=ram+"%";
+
+    document.getElementById("sessions").textContent=200+Math.floor(Math.random()*150);
+    document.getElementById("users").textContent=300+Math.floor(Math.random()*200);
+    document.getElementById("rpm").textContent=1400+Math.floor(Math.random()*800);
+    document.getElementById("db").textContent=10+Math.floor(Math.random()*40)+" ms";
+    document.getElementById("bw").textContent=150+Math.floor(Math.random()*200)+" MB/s";
+    document.getElementById("load").textContent=(Math.random()*2+0.5).toFixed(2);
+    document.getElementById("pool").textContent=
+      (80+Math.floor(Math.random()*50))+" / 150";
+    document.getElementById("sec").textContent=Math.floor(Math.random()*3);
+  },1500);
+
+  setInterval(()=>{
+    const events=[
+      "Cache sync completed",
+      "CDN node heartbeat OK",
+      "User authentication validated",
+      "Database checkpoint saved",
+      "Security scan finished"
+    ];
+    addLog(events[Math.floor(Math.random()*events.length)]);
+  },4000);
+}
+
+function addLog(text){
+  const entry=document.createElement("div");
+  entry.textContent="["+new Date().toLocaleTimeString()+"] "+text;
+  document.getElementById("logs").prepend(entry);
+}
+
+function showToast(msg){
+  toastBox.textContent=msg;
+  toastBox.style.display="block";
+  setTimeout(()=>toastBox.style.display="none",1500);
+}
+</script>
+
+
+</body>
+</html>
