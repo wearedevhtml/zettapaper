@@ -1,11 +1,11 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Category - Zettapapers</title>
   <link rel="icon" type="image/png" href="fcn.png">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css?v=20260227c">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
@@ -83,6 +83,21 @@
         padding: var(--spacing-md);
       }
     }
+
+    @media screen and (max-width: 520px) {
+      .device-grid {
+        gap: var(--spacing-md);
+        padding: var(--spacing-md) var(--spacing-sm);
+      }
+
+      .device-card {
+        padding: var(--spacing-md);
+      }
+
+      .preview-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
   </style>
 </head>
 <body>
@@ -119,7 +134,7 @@
     
     <!-- PC/Desktop -->
     <a href="Category/pc.html" class="device-card">
-      <h2>🖥️ PC & Desktop</h2>
+      <h2>??? PC & Desktop</h2>
       <p>High-resolution wallpapers for monitors and laptops</p>
       <div class="preview-grid">
         <img src="pcnsw/IMG_20250726_160442.jpg" alt="PC Wallpaper 1" loading="lazy">
@@ -130,7 +145,7 @@
 
     <!-- Tablets -->
     <a href="Category/tables.html" class="device-card">
-      <h2>📱 Tablets & iPad</h2>
+      <h2>?? Tablets & iPad</h2>
       <p>Optimized for tablet screens and iPad devices</p>
       <div class="preview-grid">
         <img src="tabletnsw/IMG_20241103_173756.jpg" alt="Tablet Wallpaper 1" loading="lazy">
@@ -141,7 +156,7 @@
 
     <!-- Mobile -->
     <a href="Category/phone.html" class="device-card">
-      <h2>📲 Mobile Phones</h2>
+      <h2>?? Mobile Phones</h2>
       <p>Vertical wallpapers designed for smartphone screens</p>
       <div class="preview-grid">
         <img src="phonensw/IMG_20241103_173555.jpg" alt="Phone Wallpaper 1" loading="lazy">
@@ -157,7 +172,7 @@
     <p>&copy; 2025 Zettapapers Wallpapers | All Rights Reserved | Designed by Daksh Jawale & helped by Dwij Ilme </p>
   </footer>
 
-  <script src="main.js" defer></script>
+  <script src="main.js?v=20260227c" defer></script>
 </body>
 </html>
 

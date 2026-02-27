@@ -2,6 +2,7 @@
 const menuToggle = document.getElementById('menuToggle');
 const navMenu = document.getElementById('navMenu');
 const menuOverlay = document.getElementById('menuOverlay');
+const MOBILE_NAV_BREAKPOINT = 1024;
 
 function toggleMenu() {
   if (!menuToggle || !navMenu || !menuOverlay) return;
@@ -23,6 +24,9 @@ if (menuToggle) {
   menuToggle.addEventListener('click', toggleMenu);
 }
 
+// Ensure the off-canvas menu starts closed on page load/back-forward restore.
+closeMenu();
+
 if (menuOverlay) {
   menuOverlay.addEventListener('click', closeMenu);
 }
@@ -43,7 +47,7 @@ document.addEventListener('keydown', (e) => {
 
 // Close menu on window resize (if open)
 window.addEventListener('resize', () => {
-  if (window.innerWidth > 900 && navMenu && navMenu.classList.contains('open')) {
+  if (window.innerWidth > MOBILE_NAV_BREAKPOINT && navMenu && navMenu.classList.contains('open')) {
     closeMenu();
   }
 });

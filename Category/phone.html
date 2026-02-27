@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -6,7 +6,7 @@
   <base href="../">
   <title>Phone Wallpapers - Zettapapers</title>
   <link rel="icon" type="image/png" href="fcn.png">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css?v=20260227c">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
@@ -311,6 +311,46 @@
         padding: 0 10px;
       }
     }
+
+    @media screen and (max-width: 520px) {
+      .all-gallery-container {
+        padding: 64px 0 16px;
+      }
+
+      .mega-grid {
+        column-count: 1;
+      }
+
+      .filter-chips {
+        gap: 6px;
+        padding: 0 12px;
+      }
+
+      .chip {
+        font-size: 12px;
+        padding: 7px 12px;
+      }
+
+      .shuffle-btn {
+        width: 100%;
+        margin-left: 0;
+      }
+
+      .modal img {
+        max-height: 55vh;
+      }
+
+      .modal-actions {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .btn-download,
+      .btn-close {
+        width: 100%;
+        justify-content: center;
+      }
+    }
   </style>
 </head>
 <body>
@@ -335,7 +375,7 @@
       <h1>Phone Wallpapers</h1>
       <p>Beautiful vertical wallpapers for your mobile device. Click to download.</p>
       <div style="margin-top: 15px;">
-        <button class="shuffle-btn" onclick="shuffleGallery()">🔀Shuffle Order</button>
+        <button class="shuffle-btn" onclick="shuffleGallery()">??Shuffle Order</button>
       </div>
     </section>
 
@@ -1574,7 +1614,7 @@ loading="lazy">
                 <div class="modal-actions">
           <div class="quality-wrap">
             <button class="btn-download" id="downloadBtn" onclick="toggleQualityOptions()">
-              <span>⬇️</span> Download
+              <span>??</span> Download
             </button>
             <div class="quality-options" id="qualityOptions">
               <button class="quality-btn" onclick="downloadImage('high')">High Quality</button>
@@ -1592,7 +1632,7 @@ loading="lazy">
     <p>2025 Zettapapers Wallpapers | All Rights Reserved | Designed by Daksh Jawale & helped by Dwij Ilme </p>
   </footer>
 
-  <script src="main.js" defer></script>
+  <script src="main.js?v=20260227c" defer></script>
   <script src="gallery-common.js" defer></script>
 </body>
 </html>

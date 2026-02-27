@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -6,7 +6,7 @@
   <base href="../">
   <title>Tablets - Zettapapers</title>
   <link rel="icon" type="image/png" href="fcn.png">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css?v=20260227c">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
@@ -313,6 +313,46 @@
         padding: 0 10px;
       }
     }
+
+    @media screen and (max-width: 520px) {
+      .all-gallery-container {
+        padding: 64px 0 16px;
+      }
+
+      .mega-grid {
+        column-count: 1;
+      }
+
+      .filter-chips {
+        gap: 6px;
+        padding: 0 12px;
+      }
+
+      .chip {
+        font-size: 12px;
+        padding: 7px 12px;
+      }
+
+      .shuffle-btn {
+        width: 100%;
+        margin-left: 0;
+      }
+
+      .modal img {
+        max-height: 55vh;
+      }
+
+      .modal-actions {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .btn-download,
+      .btn-close {
+        width: 100%;
+        justify-content: center;
+      }
+    }
   </style>
 </head>
 <body>
@@ -338,17 +378,17 @@
       <h1>Tablet Wallpapers</h1>
       <p>Optimized wallpapers for iPad and tablet devices. Click to download.</p>
       <div style="margin-top: 15px;">
-        <button class="shuffle-btn" onclick="shuffleGallery()">🔀 Shuffle Order</button>
+        <button class="shuffle-btn" onclick="shuffleGallery()">?? Shuffle Order</button>
       </div>
     </section>
 
     <div class="filter-search-box" style="margin-bottom: 20px;">
       <select id="categoryFilter">
         <option value="all">All Wallpapers</option>
-        <option value="sunset">🌆 Sunset</option>
-        <option value="flowers">🌸 Flowers</option>
-        <option value="nature">🌿 Nature & Plants</option>
-        <option value="moon">🌕 Moon & Sky</option>
+        <option value="sunset">?? Sunset</option>
+        <option value="flowers">?? Flowers</option>
+        <option value="nature">?? Nature & Plants</option>
+        <option value="moon">?? Moon & Sky</option>
       </select>
       <input type="text" id="searchInput" placeholder="Search wallpapers...">
     </div>
@@ -429,7 +469,7 @@
          data-desc="Sunset view through silhouetted plants in the evening sky."
          loading="lazy">
 
-    <!-- 🌸 FLOWERS & BLOOMS -->
+    <!-- ?? FLOWERS & BLOOMS -->
     <h2 data-section="flowers">Flowers & Blooms</h2>
 
     <img src="tabletnsw/IMG_20241010_162121.jpg" 
@@ -558,7 +598,7 @@
          data-desc="Detailed close-up of white flower petals at night."
          loading="lazy">
 
-    <!-- 🌿 NATURE & PLANTS -->
+    <!-- ?? NATURE & PLANTS -->
     <h2 data-section="nature">Nature & Plants</h2>
 
 
@@ -577,7 +617,7 @@
          data-desc="Trail passing through dense forest area under cloudy sky."
          loading="lazy">
 
-    <!-- 🌕 MOON & SKY -->
+    <!-- ?? MOON & SKY -->
     <h2 data-section="moon">Moon & Sky</h2>
 
     <img src="tabletnsw/IMG_20250906_213433.jpg" 
@@ -611,7 +651,7 @@
     </div>
 
     <div style="text-align: center; margin-top: 50px; padding: 30px; color: var(--text-muted); border-top: 1px solid #333; font-size: 14px;">
-      <p>🎉 You've reached the end</p>
+      <p>?? You've reached the end</p>
     </div>
   </div>
 
@@ -628,7 +668,7 @@
                 <div class="modal-actions">
           <div class="quality-wrap">
             <button class="btn-download" id="downloadBtn" onclick="toggleQualityOptions()">
-              <span>⬇️</span> Download
+              <span>??</span> Download
             </button>
             <div class="quality-options" id="qualityOptions">
               <button class="quality-btn" onclick="downloadImage('high')">High Quality</button>
@@ -646,7 +686,7 @@
     <p>&copy; 2025 Zettapapers Wallpapers | All Rights Reserved | Designed by Daksh Jawale & helped by Dwij Ilme </p>
   </footer>
 
-  <script src="main.js" defer></script>
+  <script src="main.js?v=20260227c" defer></script>
   <script src="gallery-common.js" defer></script>
 </body>
 </html>
